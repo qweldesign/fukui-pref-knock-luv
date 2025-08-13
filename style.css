@@ -22,11 +22,11 @@
   --color--lightest: #ffffff;
   --color--lightest--active: #cccccc;
   --color--primary: #3399cc;
-  --color--primary--active: #85c2e0;
+  --color--primary--active: rgb(132.6, 193.8, 224.4);
   --color--secondary: #ff9933;
   --color--secondary--active: #cc6600;
   --color--tertiary: #99cc33;
-  --color--tertiary--active: #5c7a1f;
+  --color--tertiary--active: rgb(91.8, 122.4, 30.6);
   --container-width--sm: 37.5rem;
   --container-width--md: 56.25rem;
   --container-width--lg: 75rem;
@@ -71,8 +71,13 @@
 }
 
 html {
-  font-size: min(3.84vw, 16px);
+  font-size: 3.125vw;
   scroll-behavior: smooth;
+}
+@media (min-width: 900px) {
+  html {
+    font-size: 1.5625vw;
+  }
 }
 
 body {
@@ -186,21 +191,46 @@ button, input, select, textarea {
 }
 
 /**
- * Project - Section
+ * Project - Site Header
  */
-.section__inner {
-  padding-block: var(--spacing--large);
+.siteHeader__top {
+  padding: var(--spacing--small) var(--spacing--small) 3.75rem;
+  background: url("./assets/siteHeaderBg.svg") no-repeat 50% 50%/cover scroll;
 }
-.section__container {
-  width: min(100%, var(--container-width--lg));
-  margin-inline: auto;
-  padding-inline: var(--container-pad--lg);
+.siteHeader__lead {
+  margin: 0;
+  font-weight: 700;
 }
-.section__row {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: center;
+.siteHeader__lead:nth-child(1) {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-block-end: var(--spacing--medium);
+  background: url("./assets/siteHeaderBorder.svg") repeat-x 50% 85%;
+}
+.siteHeader__lead:nth-child(2) {
+  max-width: 30rem;
+}
+@media (min-width: 900px) {
+  .siteHeader__lead {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .siteHeader__lead br {
+    display: none;
+  }
+}
+.siteHeader__main {
+  position: relative;
+  z-index: -1;
+  margin-block-start: -3rem;
+  padding-block-start: 3rem;
+  background: linear-gradient(#edbccb 0%, #edbccb 83.5%, #66bf97 83.6%, #66bf97 100%);
+}
+@media (min-width: 900px) {
+  .siteHeader__main {
+    padding-block-start: 4.5rem;
+    background: linear-gradient(#edbccb 0%, #edbccb 86%, #66bf97 86.1%, #66bf97 100%);
+  }
 }
 
 /**

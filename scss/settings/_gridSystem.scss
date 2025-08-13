@@ -3,7 +3,10 @@
 // ルート要素にて定義
 // これを基準とした1remを、全ての寸法の基本単位とする
 $font-size-base:   16px !default;
-$root-font-size:   min(3.84vw, $font-size-base) !default; // 4vw以下推奨
+
+// Customize
+$root-font-size-sp:  3.125vw; // 1024px時16px
+$root-font-size-pc:  1.5625vw;
 
 // 基準幅
 $grid-base:        6rem !default;

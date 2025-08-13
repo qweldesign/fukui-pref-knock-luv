@@ -9,8 +9,12 @@
 }
 
 html {
-  font-size: $root-font-size;
+  font-size: $root-font-size-sp;
   scroll-behavior: smooth;
+
+  @media (min-width: breakpoint("md")) {
+    font-size: $root-font-size-pc;
+  }
 }
 
 body {

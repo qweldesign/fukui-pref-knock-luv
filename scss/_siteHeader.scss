@@ -1,0 +1,47 @@
+/**
+ * Project - Site Header
+ */
+
+.siteHeader {
+  &__top {
+    padding: space() space() 3.75rem;
+    background: url("./assets/siteHeaderBg.svg") no-repeat 50% 50% / cover scroll;
+  }
+
+  &__lead {
+    margin: 0;
+    font-weight: 700;
+
+    &:nth-child(1) {
+      width: fit-content;
+      padding-block-end: space("medium");
+      background: url("./assets/siteHeaderBorder.svg") repeat-x 50% 85%;
+    }
+
+    &:nth-child(2) {
+      max-width: 30rem;
+    }
+
+    @media (min-width: breakpoint("md")) {
+      margin: 0 auto;
+      text-align: center;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__main {
+    position: relative;
+    z-index: -1;
+    margin-block-start: -3rem;
+    padding-block-start: 3rem;
+    background: linear-gradient(#edbccb 0%, #edbccb 83.5%, #66bf97 83.6%, #66bf97 100%);
+
+    @media (min-width: breakpoint("md")) {
+      padding-block-start: 4.5rem;
+      background: linear-gradient(#edbccb 0%, #edbccb 86%, #66bf97 86.1%, #66bf97 100%);
+    }
+  }
+}
