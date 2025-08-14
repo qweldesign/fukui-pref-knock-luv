@@ -21,12 +21,10 @@
   --color--lighter--active: #a6a6a6;
   --color--lightest: #ffffff;
   --color--lightest--active: #cccccc;
-  --color--primary: #3399cc;
-  --color--primary--active: rgb(132.6, 193.8, 224.4);
-  --color--secondary: #ff9933;
-  --color--secondary--active: #cc6600;
-  --color--tertiary: #99cc33;
-  --color--tertiary--active: rgb(91.8, 122.4, 30.6);
+  --color--primary: #edbccb;
+  --color--primary--active: rgb(215.4, 107.6, 140.6);
+  --color--secondary: #66bf97;
+  --color--secondary--active: rgb(56.331797235, 134.668202765, 99.4608294931);
   --container-width--sm: 37.5rem;
   --container-width--md: 56.25rem;
   --container-width--lg: 75rem;
@@ -223,14 +221,134 @@ button, input, select, textarea {
   position: relative;
   z-index: -1;
   margin-block-start: -3rem;
+  margin-block-end: 0;
   padding-block-start: 3rem;
-  background: linear-gradient(#edbccb 0%, #edbccb 83.5%, #66bf97 83.6%, #66bf97 100%);
+  background: linear-gradient(var(--color--primary) 0%, var(--color--primary) 83.5%, var(--color--secondary) 83.6%, var(--color--secondary) 100%);
 }
 @media (min-width: 900px) {
   .siteHeader__main {
     padding-block-start: 4.5rem;
-    background: linear-gradient(#edbccb 0%, #edbccb 86%, #66bf97 86.1%, #66bf97 100%);
+    background: linear-gradient(var(--color--primary) 0%, var(--color--primary) 86%, var(--color--secondary) 86.1%, var(--color--secondary) 100%);
   }
+}
+
+/**
+ * Project - Site Header
+ */
+.siteMain {
+  background-color: var(--color--secondary);
+}
+.siteMain__section {
+  width: 100%;
+}
+.siteMain__section--personalitySp {
+  height: 62.5vw;
+  padding: 4.5rem 0 0 16.7%;
+  background: url("./assets/personalityBg_sp.svg") no-repeat 100% 100%;
+  background-size: 91.6%;
+}
+@media (min-width: 900px) {
+  .siteMain__section--personalitySp {
+    display: none;
+  }
+}
+.siteMain__section--self-fSp {
+  height: 62.5vw;
+  padding: 4.5rem 16.7% 0 0;
+  background: url("./assets/self-fBg_sp.svg") no-repeat 0% 100%;
+  background-size: 91.6%;
+}
+@media (min-width: 900px) {
+  .siteMain__section--self-fSp {
+    display: none;
+  }
+}
+.siteMain__section--self-mSp {
+  height: 62.5vw;
+  padding: 4.5rem 0 0 16.7%;
+  background: url("./assets/self-mBg_sp.svg") no-repeat 100% 100%;
+  background-size: 91.6%;
+}
+@media (min-width: 900px) {
+  .siteMain__section--self-mSp {
+    display: none;
+  }
+}
+.siteMain__section--matchingSp {
+  height: 62.5vw;
+  padding: 4.5rem 16.7% 0 0;
+  background: url("./assets/matchingBg_sp.svg") no-repeat 0% 100%;
+  background-size: 91.6%;
+}
+@media (min-width: 900px) {
+  .siteMain__section--matchingSp {
+    display: none;
+  }
+}
+.siteMain__section--personalityPc {
+  display: none;
+}
+@media (min-width: 900px) {
+  .siteMain__section--personalityPc {
+    display: block;
+    height: 50vw;
+    padding: 10.5rem 0 0 25%;
+    background: url("./assets/personalityBg_pc.svg") no-repeat 100% 100%;
+    background-size: 91.6%;
+  }
+}
+.siteMain__section--selfPc {
+  display: none;
+}
+@media (min-width: 900px) {
+  .siteMain__section--selfPc {
+    display: flex;
+    gap: 9rem;
+    height: 50vw;
+    padding: 10.5rem 25% 0 0;
+    background: url("./assets/selfBg_pc.svg") no-repeat 0% 100%;
+    background-size: 91.6%;
+  }
+}
+.siteMain__section--matchingPc {
+  display: none;
+}
+@media (min-width: 900px) {
+  .siteMain__section--matchingPc {
+    display: block;
+    height: 50vw;
+    padding: 10.5rem 25% 0 0;
+    background: url("./assets/matchingBg_pc.svg") no-repeat 0% 100%;
+    background-size: 91.6%;
+  }
+}
+.siteMain__heading--personalitySp {
+  width: 18rem;
+  margin: 0 auto;
+}
+.siteMain__heading--self-fSp {
+  width: 18rem;
+  margin: 0 auto;
+}
+.siteMain__heading--self-mSp {
+  width: 18rem;
+  margin: 0 auto;
+}
+.siteMain__heading--matchingSp {
+  width: 21rem;
+  margin: 0 auto;
+}
+.siteMain__heading--personalityPc {
+  width: 30rem;
+  margin: 0 auto;
+}
+.siteMain__heading--self-fPc, .siteMain__heading--self-mPc {
+  width: 18rem;
+  margin: 0 auto;
+}
+.siteMain__heading--matchingPc {
+  width: 27rem;
+  margin: 0 auto;
 }
 
 /**
