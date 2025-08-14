@@ -25,6 +25,8 @@
   --color--primary--active: rgb(215.4, 107.6, 140.6);
   --color--secondary: #66bf97;
   --color--secondary--active: rgb(56.331797235, 134.668202765, 99.4608294931);
+  --color--tertiary: #9f77ad;
+  --color--tertiary--active: rgb(203.9174311927, 182.6330275229, 211.3669724771);
   --container-width--sm: 37.5rem;
   --container-width--md: 56.25rem;
   --container-width--lg: 75rem;
@@ -186,6 +188,20 @@ th {
 
 button, input, select, textarea {
   font: inherit;
+}
+
+/**
+ * Layout
+ */
+.wrapper {
+  background: url("./assets/pageBg.png") repeat-y 50% 0%/85% scroll, var(--color--primary);
+}
+
+.container {
+  width: min(100%, 32rem);
+  margin: 0 auto;
+  border-inline: 2px solid var(--color--darkest);
+  background-color: var(--color--secondary);
 }
 
 /**
@@ -365,6 +381,86 @@ button, input, select, textarea {
 .siteMain__heading--matchingPc {
   width: 27rem;
   margin: 0 auto;
+}
+
+/**
+ * Project - Page Header
+ */
+.pageHeader {
+  padding-block-end: 18rem;
+  background: url("./assets/pageFg.png") no-repeat 50% 100%/contain scroll, var(--color--primary);
+}
+.pageHeader__title {
+  width: 27rem;
+  margin: 0 auto;
+}
+.pageHeader__desc {
+  width: 27rem;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+/**
+ * Project - Personality Test
+ */
+.personalityTest {
+  padding: var(--spacing--x-large) 0;
+}
+.personalityTest__start {
+  position: relative;
+  width: 27rem;
+  height: 18rem;
+  margin: 0 auto;
+  border: 2px solid var(--color--darkest);
+  background: url("./assets/personalityTestStart.png") no-repeat 50% 0%/80% scroll, var(--color--lightest);
+  box-shadow: 3px 3px 12px 3px rgba(0, 0, 0, 0.3);
+}
+.personalityTest__button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 25%;
+  display: block;
+  width: 12rem;
+  height: 3rem;
+  line-height: 3rem;
+  margin-inline: auto;
+  border: 0;
+  border-radius: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  word-break: break-word;
+  outline: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-color: var(--color--tertiary);
+  color: var(--color--lightest);
+}
+.personalityTest__button:hover {
+  text-decoration: none;
+  transform: scale(96%);
+}
+.personalityTest__button:hover {
+  background-color: var(--color--tertiary--active);
+  color: var(--color--darkest);
+}
+.personalityTest__button:hover {
+  box-shadow: 0 0 var(--spacing--small) var(--color--tertiary);
+}
+.personalityTest__button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0.75rem;
+  bottom: 0;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: auto;
+  background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
 }
 
 /**

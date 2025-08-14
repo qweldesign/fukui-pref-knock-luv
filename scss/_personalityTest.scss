@@ -1,0 +1,38 @@
+/**
+ * Project - Personality Test
+ */
+
+.personalityTest {
+  padding: space("x-large") 0;
+
+  &__start {
+    position: relative;
+    width: 27rem;
+    height: 18rem;
+    margin: 0 auto;
+    border: 2px solid theme-color("darkest");
+    background: url("./assets/personalityTestStart.png") no-repeat 50% 0% / 80% scroll, theme-color("lightest");
+    box-shadow: 3px 3px 12px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  &__button {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 25%;
+    @include button("tertiary", 12rem, 3rem, 1.5rem);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0.75rem;
+      bottom: 0;
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin: auto;
+      background: url("./assets/button.svg") no-repeat 50% 50% / contain scroll;
+    }
+  }
+}

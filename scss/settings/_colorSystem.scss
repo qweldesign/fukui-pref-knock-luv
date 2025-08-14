@@ -13,7 +13,8 @@ $grays:            (
 
 $colors:           (
   primary:           #edbccb,
-  secondary:         #66bf97
+  secondary:         #66bf97,
+  tertiary:          #9f77ad
 ) !default;
 
 $theme-colors:     map-merge($grays, $colors) !default;

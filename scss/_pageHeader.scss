@@ -1,0 +1,19 @@
+/**
+ * Project - Page Header
+ */
+
+.pageHeader {
+  padding-block-end: 18rem;
+  background: url("./assets/pageFg.png") no-repeat 50% 100% / contain scroll, theme-color("primary");
+
+  &__title {
+    width: 27rem;
+    margin: 0 auto;
+  }
+
+  &__desc {
+    width: 27rem;
+    margin: 0 auto;
+    text-align: justify;
+  }
+}

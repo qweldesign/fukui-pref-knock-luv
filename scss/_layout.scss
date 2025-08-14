@@ -1,0 +1,14 @@
+/**
+ * Layout
+ */
+
+.wrapper {
+  background: url("./assets/pageBg.png") repeat-y 50% 0% / 85% scroll, theme-color("primary"); // Temporary scale
+}
+
+.container {
+  width: min(100%, 32rem); // Fix
+  margin: 0 auto;
+  border-inline: 2px solid theme-color("darkest");
+  background-color: theme-color("secondary");
+}
