@@ -236,6 +236,7 @@ button, input, select, textarea {
  * Project - Site Header
  */
 .siteMain {
+  padding-block-end: var(--spacing--large);
   background-color: var(--color--secondary);
 }
 .siteMain__section {
@@ -349,6 +350,25 @@ button, input, select, textarea {
 .siteMain__heading--matchingPc {
   width: 27rem;
   margin: 0 auto;
+}
+
+/**
+ * Project - Footer
+ */
+.footer {
+  padding-block: var(--spacing--large);
+  background-color: var(--color--darkest);
+  color: var(--color--lightest);
+  text-align: center;
+}
+.footer small {
+  display: block;
+}
+@media (min-width: 900px) {
+  .footer small {
+    display: inline-block;
+    padding-inline: var(--spacing--x-small);
+  }
 }
 
 /**

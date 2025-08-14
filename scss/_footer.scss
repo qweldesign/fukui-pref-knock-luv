@@ -1,0 +1,19 @@
+/**
+ * Project - Footer
+ */
+
+.footer {
+  padding-block: space("large");
+  background-color: theme-color("darkest");
+  color: theme-color("lightest");
+  text-align: center;
+
+  small {
+    display: block;
+
+    @media (min-width: breakpoint("md")) {
+      display: inline-block;
+      padding-inline: space("x-small");
+    }
+  }
+}

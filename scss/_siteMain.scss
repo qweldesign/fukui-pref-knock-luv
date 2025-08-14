@@ -3,6 +3,7 @@
  */
 
 .siteMain {
+  padding-block-end: space("large");
   background-color: theme-color("secondary");
 
   &__section {
