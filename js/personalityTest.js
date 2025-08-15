@@ -52,11 +52,17 @@ export default class PersonalityTest {
     
     // 設問テンプレートを準備
     this.ready();
+    this.index = 0; // 「診断スタート」の表示が0
 
-    const start = document.getElementById('start');
-    start.addEventListener('click', () => {
-      this.start();
-    })
+    const buttons = document.querySelectorAll('.personalityTest__button');
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        if (this.index < TEST.length) {
+          this.next();
+          this.index++;
+        }
+      });
+    });
   }
 
   ready() {
@@ -67,7 +73,7 @@ export default class PersonalityTest {
       const main = clone.querySelector('.personalityTest__main');
       const content = clone.querySelector('.personalityTest__content');
 
-      main.classList.add('personalityTest__main--collapse')
+      main.classList.add('personalityTest__main--collapse');
       main.dataset.index = i + 1;
       content.textContent = test.content;
 
@@ -75,7 +81,43 @@ export default class PersonalityTest {
     });
   }
 
-  start() {
+  next() {
+    const prev = document.querySelector(`[data-index="${this.index}"]`);
+    this.hide(prev)
 
+    const next = document.querySelector(`[data-index="${this.index + 1}"]`);
+    this.show(next);
+  }
+
+  hide(elem) {
+    this.animationEnd(elem, () => {
+      elem.classList.add('personalityTest__main--leave');
+    }).then(() => {
+      elem.classList.add('personalityTest__main--collapse');
+      elem.classList.remove('personalityTest__main--leave');
+    });
+  }
+
+  show(elem) {
+    elem.classList.remove('personalityTest__main--collapse');
+    this.animationEnd(elem, () => {
+      elem.classList.add('personalityTest__main--enter');
+    }).then(() => {
+      elem.classList.remove('personalityTest__main--enter');
+    });
+  }
+
+  animationEnd(elem, func) {
+    // CSSアニメの完了を監視
+    let callback;
+    const promise = new Promise((resolve, reject) => {
+      callback = () => resolve(elem);
+      elem.addEventListener('animationend', callback);
+    });
+    func();
+    promise.then((elem) => {
+      elem.removeEventListener('animationend', callback);
+    });
+    return promise;
   }
 }
