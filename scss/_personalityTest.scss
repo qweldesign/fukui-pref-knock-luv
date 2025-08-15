@@ -5,22 +5,67 @@
 .personalityTest {
   padding: space("x-large") 0;
 
-  &__start {
+  &__main {
     position: relative;
     width: 27rem;
     height: 18rem;
     margin: 0 auto;
     border: 2px solid theme-color("darkest");
-    background: url("./assets/personalityTestStart.png") no-repeat 50% 0% / 80% scroll, theme-color("lightest");
+    background-color: theme-color("lightest");
     box-shadow: 3px 3px 12px 3px rgba(0, 0, 0, 0.3);
+
+    &--start {
+      background: url("./assets/personalityTestStart.png") no-repeat 50% 0% / 80% scroll, theme-color("lightest");
+    }
+
+    &:not(.personalityTest__main--start)::before {
+      content: "";
+      position: absolute;
+      top: -1rem;
+      left: 1rem;
+      z-index: 10;
+      display: block;
+      width: 4.5rem;
+      height: 6rem;
+      background: url("./assets/personalityLabel.png") no-repeat 0% 0% / contain scroll;
+    }
+
+     &:not(.personalityTest__main--start)::after {
+      content: "問" attr(data-index);
+      position: absolute;
+      top: 0.5rem;
+      left: 1rem;
+      z-index: 10;
+      display: block;
+      width: 3.5rem;
+      color: theme-color("lightest");
+      font-size: 1.33rem;
+      text-align: center;
+     }
+  }
+
+  &__content {
+    padding: 4rem 3rem 0;
+    text-align: justify;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-around;
+    gap: 1.5rem;
+    padding: 0 3rem;
   }
 
   &__button {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 25%;
+    bottom: 12.5%;
     @include button("tertiary", 12rem, 3rem, 1.5rem);
+
+    @at-root .personalityTest__main--start & {
+      bottom: 25%;
+    }
 
     &::after {
       content: "";

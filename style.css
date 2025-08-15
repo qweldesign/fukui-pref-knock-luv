@@ -406,20 +406,56 @@ button, input, select, textarea {
 .personalityTest {
   padding: var(--spacing--x-large) 0;
 }
-.personalityTest__start {
+.personalityTest__main {
   position: relative;
   width: 27rem;
   height: 18rem;
   margin: 0 auto;
   border: 2px solid var(--color--darkest);
-  background: url("./assets/personalityTestStart.png") no-repeat 50% 0%/80% scroll, var(--color--lightest);
+  background-color: var(--color--lightest);
   box-shadow: 3px 3px 12px 3px rgba(0, 0, 0, 0.3);
+}
+.personalityTest__main--start {
+  background: url("./assets/personalityTestStart.png") no-repeat 50% 0%/80% scroll, var(--color--lightest);
+}
+.personalityTest__main:not(.personalityTest__main--start)::before {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  left: 1rem;
+  z-index: 10;
+  display: block;
+  width: 4.5rem;
+  height: 6rem;
+  background: url("./assets/personalityLabel.png") no-repeat 0% 0%/contain scroll;
+}
+.personalityTest__main:not(.personalityTest__main--start)::after {
+  content: "問" attr(data-index);
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  z-index: 10;
+  display: block;
+  width: 3.5rem;
+  color: var(--color--lightest);
+  font-size: 1.33rem;
+  text-align: center;
+}
+.personalityTest__content {
+  padding: 4rem 3rem 0;
+  text-align: justify;
+}
+.personalityTest__form {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.5rem;
+  padding: 0 3rem;
 }
 .personalityTest__button {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 25%;
+  bottom: 12.5%;
   display: block;
   width: 12rem;
   height: 3rem;
@@ -450,6 +486,10 @@ button, input, select, textarea {
 .personalityTest__button:hover {
   box-shadow: 0 0 var(--spacing--small) var(--color--tertiary);
 }
+.personalityTest__main--start .personalityTest__button {
+  bottom: 25%;
+}
+
 .personalityTest__button::after {
   content: "";
   position: absolute;
@@ -461,6 +501,40 @@ button, input, select, textarea {
   height: 1.5rem;
   margin: auto;
   background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
+}
+
+/**
+ * Conponent - Radio
+ */
+.radio {
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+.radio input[type=radio] {
+  display: none;
+}
+.radio__mark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-inline-end: 0.5rem;
+  border: 2px solid var(--color--darkest);
+  border-radius: 1rem;
+  font-weight: bold;
+  font-size: 1.33rem;
+  color: transparent;
+  transition: color 0.5s ease;
+}
+.radio input[type=radio]:checked + .radio__mark {
+  content: "✓";
+  color: var(--color--darkest);
+}
+.radio input[type=radio]:checked + .radio__mark::before {
+  content: "✓";
 }
 
 /**
