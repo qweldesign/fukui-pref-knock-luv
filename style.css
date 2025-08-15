@@ -441,6 +441,9 @@ button, input, select, textarea {
   font-size: 1.33rem;
   text-align: center;
 }
+.personalityTest__main--collapse {
+  display: none;
+}
 .personalityTest__content {
   padding: 4rem 3rem 0;
   text-align: justify;

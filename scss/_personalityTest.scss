@@ -30,7 +30,7 @@
       background: url("./assets/personalityLabel.png") no-repeat 0% 0% / contain scroll;
     }
 
-     &:not(.personalityTest__main--start)::after {
+    &:not(.personalityTest__main--start)::after {
       content: "問" attr(data-index);
       position: absolute;
       top: 0.5rem;
@@ -41,7 +41,11 @@
       color: theme-color("lightest");
       font-size: 1.33rem;
       text-align: center;
-     }
+    }
+
+    &--collapse {
+      display: none;
+    }
   }
 
   &__content {
