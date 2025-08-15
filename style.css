@@ -199,6 +199,7 @@ button, input, select, textarea {
 
 .container {
   width: min(100%, 32rem);
+  min-height: calc(100vh - 11.25rem);
   margin: 0 auto;
   border-inline: 2px solid var(--color--darkest);
   background-color: var(--color--secondary);
