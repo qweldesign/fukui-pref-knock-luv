@@ -43,12 +43,23 @@ const TEST = [
     yes: 'I',
     no: 'E'
   }
-]
+];
+
+const TYPE = {
+  EFA: '情熱ピュア派',
+  EFP: 'フリースピリット派',
+  ETA: '恋愛プロデューサー型',
+  ETP: 'クールマスター型',
+  IFA: '沼りロマンチスト型',
+  IFP: 'ふわふわ夢見系',
+  ITA: '慎重な観察者型',
+  ITP: '理論派マイペース型'
+}
 
 export default class PersonalityTest {
   constructor() {
     this.elem = document.getElementById('test');
-    if (!this.elem) return
+    if (!this.elem) return;
     
     // 設問テンプレートを準備
     this.ready();
@@ -58,8 +69,10 @@ export default class PersonalityTest {
     buttons.forEach((button) => {
       button.addEventListener('click', () => {
         if (this.index < TEST.length) {
-          this.next();
+          this.goToNext();
           this.index++;
+        } else {
+          this.goToResult();
         }
       });
     });
@@ -72,16 +85,20 @@ export default class PersonalityTest {
       const clone = template.content.cloneNode(true);
       const main = clone.querySelector('.personalityTest__main');
       const content = clone.querySelector('.personalityTest__content');
+      const radios = clone.querySelectorAll('input[type="radio"]')
 
       main.classList.add('personalityTest__main--collapse');
       main.dataset.index = i + 1;
       content.textContent = test.content;
+      radios.forEach((radio) => {
+        radio.setAttribute('name', `q${i + 1}`);
+      })
 
       this.elem.appendChild(clone);
     });
   }
 
-  next() {
+  goToNext() {
     const prev = document.querySelector(`[data-index="${this.index}"]`);
     this.hide(prev)
 
@@ -105,6 +122,45 @@ export default class PersonalityTest {
     }).then(() => {
       elem.classList.remove('personalityTest__main--enter');
     });
+  }
+
+  goToResult() {
+    const arr = [];
+    const checkedRadios = document.querySelectorAll('input[type="radio"]:checked');
+
+    checkedRadios.forEach((radio, i) => {
+      arr.push(TEST[i][radio.value]);
+    });
+
+    const counts = this.countParams(arr);
+    this.getType(counts);
+  }
+
+  countParams(arr) {
+    return arr.reduce((acc, cur) => {
+      acc[cur] = (acc[cur] || 0) + 1;
+      return acc;
+    }, {});
+  }
+
+  getType(counts) {
+    const EI = (counts['E'] < counts['I']) ? 'I' : 'E';
+    const FT = (counts['F'] < counts['T']) ? 'T' : 'F';
+    const AP = (counts['A'] < counts['P']) ? 'P' : 'A';
+
+    const type = `${EI}${FT}${AP}`;
+    this.debugTest(counts, type);
+  }
+
+  debugTest(counts, type) {
+    const content = document.querySelector('.personalityTest__result');
+    const html = `<ul>` + 
+      Object.entries(counts)
+        .map(([key, value]) => `<li>${key}: ${value}</li>`)
+        .join("") +
+      `</ul>`;
+    content.innerHTML = `<h3>${TYPE[type]}(${type})</h3>${html}`;
+    this.goToNext();
   }
 
   animationEnd(elem, func) {

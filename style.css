@@ -447,11 +447,14 @@ button, input, select, textarea {
   font-size: 1.33rem;
   text-align: center;
 }
+.personalityTest__main.personalityTest__main--result::after {
+  content: "解";
+}
 .personalityTest__main--leave {
-  animation: slide-out 1s ease;
+  animation: slide-out 0.5s ease;
 }
 .personalityTest__main--enter {
-  animation: slide-in 1s ease;
+  animation: slide-in 0.5s ease;
 }
 .personalityTest__main--collapse {
   display: none;
@@ -516,6 +519,12 @@ button, input, select, textarea {
   height: 1.5rem;
   margin: auto;
   background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
+}
+.personalityTest__result {
+  padding-inline-start: 7.5rem;
+}
+.personalityTest__result ul, .personalityTest__result li {
+  margin: 0;
 }
 
 @keyframes slide-out {
