@@ -1,0 +1,106 @@
+/**
+ * Project - Personality Result
+ */
+
+.personalityResult {
+  &__main {
+    position: relative;
+    margin-block-start: space("large");
+    padding-inline: space("medium");
+    border-block: 2px solid theme-color("darkest");
+    background-color: theme-color("lightest");
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -1rem;
+      left: 1.5rem;
+      z-index: 10;
+      display: block;
+      width: 4.5rem;
+      height: 6rem;
+      background: url("./assets/personalityLabel.png") no-repeat 0% 0% / contain scroll;
+    }
+
+    &::after {
+      content: "結果";
+      position: absolute;
+      top: 0.5rem;
+      left: 1.5rem;
+      z-index: 10;
+      display: block;
+      width: 3.5rem;
+      color: theme-color("lightest");
+      font-size: 1.33rem;
+      text-align: center;
+    }
+  }
+
+  &__name {
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__subName {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__image {
+    margin: space("medium");
+    border: 2px solid theme-color("darkest");
+    border-radius: space("medium");
+    overflow: hidden;
+  }
+
+  &__lead {
+    width: fit-content;
+    margin-inline-start: space();
+    padding: space("x-small");
+    border: 2px solid theme-color("darkest");
+    background-color: theme-color("lightest");
+    box-shadow: 3px 3px 3px 3px #fedf7b;
+
+    & > img {
+      width: auto;
+      height: 1.25rem;
+    }
+  }
+
+  &__content {
+    padding: space();
+    text-align: justify;
+  }
+
+  &__row {
+    @include row(flex-start, flex-start);
+    padding: space();
+  }
+
+  &__col {
+    flex: 1 1 50%;
+  }
+
+  &__headline {
+    width: 83.33%;
+    margin: 0 0 space();
+    border: 1px solid $body-color;
+    border-radius: 0.5em;
+    text-align: center;
+  }
+
+  &__list {
+    @include list-unstyled();
+    margin: 0;
+    @include small-text();
+  }
+
+  &__listItem {
+    margin: 0;
+  }
+
+  &__aside {
+    height: 200vh; // tmp
+  }
+}
