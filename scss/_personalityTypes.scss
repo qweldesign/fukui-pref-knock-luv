@@ -1,0 +1,117 @@
+/**
+ * Project - 8 Types
+ */
+
+.personalityTypes {
+  &__header {
+    position: relative;
+    height: 7.5rem;
+  }
+
+  &__headerInner {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 22.5rem;
+    margin: 0 0 0 auto;
+  }
+
+  &__heading {
+    width: 12rem;
+    margin: 0 auto;
+  }
+
+  &__desc {
+    color: theme-color("lightest");
+    @include small-text();
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  &__headerBg {
+    position: absolute;
+    right: 3rem;
+    bottom: 0;
+    z-index: 0;
+    width: 25.5rem;
+    height: 7.5rem;
+    border: 2px solid theme-color("darkest");
+    background-color: #ffa188;
+    transform: skewX(-60deg);
+    transform-origin: bottom;
+  }
+
+  &__body {
+    position: relative;
+    width: 25.5rem;
+    margin-inline-start: auto;
+    margin-inline-end: 3rem;
+    margin-block-end: 3rem;
+    background-color: theme-color("lightest");
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      bottom: 0;
+      width: 9rem;
+      height: 100%;
+      border-block-end: 2px solid theme-color("darkest");
+      background-color: #fedf7b;
+      transform: skewY(-30deg);
+      transform-origin: left;
+    }
+  }
+
+  &__row {
+    @include row(flex-start, stretch);
+  }
+
+  &__col {
+    flex: 1 1 50%;
+    padding: space("medium");
+    border: 1px solid theme-color("darkest");
+
+    &:nth-child(1), &:nth-child(2) {
+      border-block-start: 0;
+    }
+
+    &:nth-child(2n) {
+      border-inline-start: 0;
+    }
+  }
+
+  &__clipImage {
+    margin: space("small") 0;
+  }
+
+  &__name {
+    margin: 0;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__subName {
+    margin: 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__content {
+    @include small-text();
+    text-align: justify;
+  }
+
+  &__viewmore {
+    margin: 0;
+    text-align: center;
+    @include small-text();
+
+    a {
+      padding-block-end: space("x-small");
+      border-block-end: 1px dashed theme-color("darkest");
+    }
+  }
+}

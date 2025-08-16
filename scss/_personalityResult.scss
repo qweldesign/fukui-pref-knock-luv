@@ -39,12 +39,22 @@
   &__name {
     font-weight: 700;
     text-align: center;
+
+    &--aside {
+      margin: 0;
+      color: theme-color("lightest");
+    }
   }
 
   &__subName {
     font-family: "Barlow Condensed", sans-serif;
     font-weight: 600;
     text-align: center;
+
+    &--aside {
+      margin: 0;
+      color: theme-color("lightest");
+    }
   }
 
   &__image {
@@ -71,6 +81,13 @@
   &__content {
     padding: space();
     text-align: justify;
+
+    &--aside {
+      margin: 0;
+      padding-block: 0;
+      color: theme-color("lightest");
+      @include small-text();
+    }
   }
 
   &__row {
@@ -101,6 +118,45 @@
   }
 
   &__aside {
-    height: 200vh; // tmp
+    padding: space() 0;
+  }
+
+  &__subHeading {
+    color: theme-color("lightest");
+    text-align: center;
+  }
+
+  &__banner {
+    aspect-ratio: 2;
+    width: 27rem;
+    margin: auto;
+
+    &--blue {
+      background: url("./assets/bannerBg_blue.png") no-repeat 50% 50% / contain scroll;
+    }
+
+    &--green {
+      background: url("./assets/bannerBg_green.png") no-repeat 50% 50% / contain scroll;
+    }
+  }
+
+  &__clipImage {
+    margin: 0 space("medium");
+  }
+
+  &__hearts {
+    margin-block: space();
+  }
+
+  &__viewmore {
+    margin: 0;
+    text-align: center;
+    @include small-text();
+
+    a {
+      padding-block-end: space("x-small");
+      border-block-end: 1px dashed theme-color("lightest");
+      color: theme-color("lightest");
+    }
   }
 }

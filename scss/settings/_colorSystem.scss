@@ -79,5 +79,5 @@ $body-color:       theme-color("darkest") !default;
 
 // リンク文字の設定
 // リンクを強調するため、_typography.scssにて、文字の装飾も設定すること
-$link-color:       theme-color("darker") !default;
-$link-hover-color: theme-color($theme-accent) !default;
+$link-color:       theme-color("darkest") !default;
+$link-hover-color: theme-color("darker") !default;
