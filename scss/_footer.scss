@@ -3,10 +3,14 @@
  */
 
 .footer {
-  padding-block: space("large");
+  padding: space("large") 0 space("x-large");
   background-color: theme-color("darkest");
   color: theme-color("lightest");
   text-align: center;
+
+  @media (min-width: breakpoint("md")) {
+    padding-block-end: space("large");
+  }
 
   small {
     display: block;
