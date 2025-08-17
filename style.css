@@ -194,7 +194,7 @@ button, input, select, textarea {
  * Layout
  */
 .wrapper {
-  background: url("./assets/pageBg.png") repeat-y 50% 0%/85% scroll, var(--color--primary);
+  background: url("./assets/pageBg.png") repeat-y 50% 0%/100% scroll, var(--color--primary);
 }
 
 .container {
