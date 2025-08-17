@@ -199,11 +199,14 @@ button, input, select, textarea {
 
 .container {
   width: min(100%, 32rem);
-  min-height: calc(100vh - 11.25rem);
+  min-height: calc(100vh - 15rem);
   margin: 0 auto;
   border-inline: 2px solid var(--color--darkest);
   background-color: var(--color--secondary);
   overflow: hidden;
+}
+.container--lightest {
+  background-color: var(--color--lightest);
 }
 
 /**
@@ -343,7 +346,7 @@ button, input, select, textarea {
 }
 .siteMain__heading a {
   display: block;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.35s ease;
 }
 .siteMain__heading a:hover {
   opacity: 0.7;
@@ -388,9 +391,24 @@ button, input, select, textarea {
 /**
  * Project - Page Header
  */
-.pageHeader {
+.pageHeader--personality {
   padding-block-end: 18rem;
   background: url("./assets/pageFg.png") no-repeat 50% 100%/contain scroll, var(--color--primary);
+}
+.pageHeader--self-f {
+  background: url("./assets/self-fHeaderBg.png") no-repeat 50% 100%/cover scroll;
+  color: var(--color--lightest);
+}
+.pageHeader--self-m {
+  background: url("./assets/self-mHeaderBg.png") no-repeat 50% 100%/cover scroll;
+  color: var(--color--lightest);
+}
+.pageHeader--matching {
+  background: url("./assets/matchingHeaderBg.png") no-repeat 50% 100%/cover scroll;
+}
+.pageHeader--column {
+  padding-block-end: 18rem;
+  background: url("./assets/pageFg.png") no-repeat 50% 100%/contain scroll, #59ada9;
 }
 .pageHeader__title {
   width: 27rem;
@@ -400,6 +418,152 @@ button, input, select, textarea {
   width: 27rem;
   margin: 0 auto;
   text-align: justify;
+}
+
+/**
+ * Project - Page Main
+ */
+.pageMain {
+  padding: var(--spacing--medium);
+}
+.pageMain--column {
+  margin-block-start: -3rem;
+  padding-block-start: 0;
+  padding-block-end: 3rem;
+}
+.pageMain__column {
+  margin: var(--spacing--medium);
+}
+.pageMain__column a {
+  display: block;
+  transition: opacity 0.35s ease;
+}
+.pageMain__column a:hover {
+  opacity: 0.85;
+}
+.pageMain__largeBanner {
+  margin: -1.5rem;
+}
+.pageMain__largeBanner--matching {
+  height: 20rem;
+  padding: 4.5rem 16.7% 0 0;
+  background: url("./assets/matchingBg_sp.svg") no-repeat 0% 100%;
+  background-size: 91.6%;
+}
+.pageMain__largeBannerText {
+  display: block;
+  transition: opacity 0.35s ease;
+}
+.pageMain__largeBannerText:hover {
+  opacity: 0.7;
+}
+.pageMain__largeBannerText::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  margin: var(--spacing--small) auto;
+  background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
+}
+.pageMain__largeBannerText--matching {
+  width: 21rem;
+  margin: 0 auto;
+}
+
+/**
+ * Project - Page Menu
+ */
+.pageMenu {
+  counter-reset: index;
+  list-style: none;
+  padding-inline-start: 0;
+  margin: 0 0 var(--spacing--medium);
+  padding: 13.5rem 0 3.75rem;
+}
+.pageMenu__item {
+  position: relative;
+  width: 27rem;
+  margin: var(--spacing--small) auto;
+  padding: var(--spacing--small);
+  border-radius: var(--spacing--large);
+  background-color: var(--color--lightest);
+}
+.pageMenu__item:hover {
+  transition: opacity 0.35s ease;
+  opacity: 0.85;
+}
+.pageMenu__item a {
+  display: block;
+  font-weight: 700;
+  font-size: 1.33rem;
+}
+.pageMenu--self-f .pageMenu__item a {
+  color: #9f77ad;
+}
+
+.pageMenu--self-m .pageMenu__item a {
+  color: #004076;
+}
+
+.pageMenu--matching .pageMenu__item a {
+  background: linear-gradient(90deg, #fc5c6c, #8866ff, #00c2da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.pageMenu__item a::before {
+  counter-increment: index;
+  content: counter(index);
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin-inline-end: var(--spacing--small);
+  border-radius: 50%;
+  line-height: 2rem;
+  text-align: center;
+}
+.pageMenu--self-f .pageMenu__item a::before {
+  background-color: #9f77ad;
+  color: var(--color--lightest);
+}
+
+.pageMenu--self-m .pageMenu__item a::before {
+  background-color: #004076;
+  color: var(--color--lightest);
+}
+
+.pageMenu--matching .pageMenu__item a::before {
+  background: linear-gradient(135deg, #fc5c6c, #fc8e4e);
+  color: var(--color--lightest);
+  -webkit-text-fill-color: currentColor;
+}
+
+.pageMenu__item a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1rem;
+  height: 1rem;
+  margin: auto var(--spacing--medium);
+  transform: rotate(45deg);
+}
+.pageMenu--self-f .pageMenu__item a::after {
+  border-top: 4px solid #9f77ad;
+  border-right: 4px solid #9f77ad;
+}
+
+.pageMenu--self-m .pageMenu__item a::after {
+  border-top: 4px solid #004076;
+  border-right: 4px solid #004076;
+}
+
+.pageMenu--matching .pageMenu__item a::after {
+  border-top: 4px solid #00c2da;
+  border-right: 4px solid #00c2da;
 }
 
 /**
@@ -833,6 +997,16 @@ button, input, select, textarea {
 }
 .radio input[type=radio]:checked + .radio__mark::before {
   content: "✓";
+}
+
+/**
+ * Conponent - Button
+ */
+.button {
+  transition: opacity 0.35s ease;
+}
+.button:hover {
+  opacity: 0.7;
 }
 
 /**

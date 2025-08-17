@@ -3,8 +3,29 @@
  */
 
 .pageHeader {
-  padding-block-end: 18rem;
-  background: url("./assets/pageFg.png") no-repeat 50% 100% / contain scroll, theme-color("primary");
+  &--personality {
+    padding-block-end: 18rem;
+    background: url("./assets/pageFg.png") no-repeat 50% 100% / contain scroll, theme-color("primary");
+  }
+
+  &--self-f {
+    background: url("./assets/self-fHeaderBg.png") no-repeat 50% 100% / cover scroll;
+    color: theme-color("lightest");
+  }
+
+  &--self-m {
+    background: url("./assets/self-mHeaderBg.png") no-repeat 50% 100% / cover scroll;
+    color: theme-color("lightest");
+  }
+
+  &--matching {
+    background: url("./assets/matchingHeaderBg.png") no-repeat 50% 100% / cover scroll;
+  }
+
+  &--column { // moneyplanと共用
+    padding-block-end: 18rem;
+    background: url("./assets/pageFg.png") no-repeat 50% 100% / contain scroll, #59ada9;
+  }
 
   &__title {
     width: 27rem;

@@ -1,0 +1,101 @@
+/**
+ * Project - Page Menu
+ */
+
+.pageMenu {
+  counter-reset: index;
+  @include list-unstyled();
+  margin: 0 0 space("medium");
+  padding: 13.5rem 0 3.75rem;
+
+  &__item {
+    position: relative;
+    width: 27rem;
+    margin: space() auto;
+    padding: space();
+    border-radius: space("large");
+    background-color: theme-color("lightest");
+    
+    &:hover {
+      transition: opacity 0.35s ease;
+      opacity: 0.85;
+    }
+
+    a {
+      display: block;
+      font-weight: 700;
+      font-size: 1.33rem;
+
+      @at-root .pageMenu--self-f & {
+        color: #9f77ad ;
+      }
+
+      @at-root .pageMenu--self-m & {
+        color: #004076;
+      }
+
+      @at-root .pageMenu--matching & {
+        background: linear-gradient(90deg, #fc5c6c, #8866ff, #00c2da);
+        -webkit-background-clip: text; // Safari, Chrome
+        -webkit-text-fill-color: transparent; // Safari, Chrome
+        background-clip: text; // 一部のブラウザで有効
+        color: transparent;    // 念のため
+      }
+
+      &::before {
+        counter-increment: index;
+        content: counter(index);
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        margin-inline-end: space();
+        border-radius: 50%;
+        line-height: 2rem;
+        text-align: center;
+
+        @at-root .pageMenu--self-f & {
+          background-color: #9f77ad;
+          color: theme-color("lightest");
+        }
+
+        @at-root .pageMenu--self-m & {
+          background-color: #004076;
+          color: theme-color("lightest");
+        }
+
+        @at-root .pageMenu--matching & {
+          background: linear-gradient(135deg, #fc5c6c, #fc8e4e);
+          color: theme-color("lightest");
+          -webkit-text-fill-color: currentColor; // unset
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 1rem;
+        height: 1rem;
+        margin: auto space("medium");
+        transform: rotate(45deg);
+
+        @at-root .pageMenu--self-f & {
+          border-top: 4px solid #9f77ad;
+          border-right: 4px solid #9f77ad;
+        }
+
+        @at-root .pageMenu--self-m & {
+          border-top: 4px solid #004076;
+          border-right: 4px solid #004076;
+        }
+
+        @at-root .pageMenu--matching & {
+          border-top: 4px solid #00c2da;
+          border-right: 4px solid #00c2da;
+        }
+      }
+    }
+  }
+}

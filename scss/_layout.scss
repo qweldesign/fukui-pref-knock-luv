@@ -8,9 +8,13 @@
 
 .container {
   width: min(100%, 32rem); // Fix
-  min-height: calc(100vh - 11.25rem); // Footerを引く
+  min-height: calc(100vh - 15rem); // FloatingAreaとFooterを引く
   margin: 0 auto;
   border-inline: 2px solid theme-color("darkest");
   background-color: theme-color("secondary");
   overflow: hidden;
+
+  &--lightest {
+    background-color: theme-color("lightest");
+  }
 }

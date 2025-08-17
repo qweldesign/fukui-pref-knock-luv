@@ -1,0 +1,60 @@
+/**
+ * Project - Page Main
+ */
+
+.pageMain {
+  padding: space("medium");
+
+  &--column {
+    margin-block-start: -3rem;
+    padding-block-start: 0;
+    padding-block-end: 3rem;
+  }
+
+  &__column {
+    margin: space("medium");
+
+    a {
+      display: block;
+      transition: opacity 0.35s ease;
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+  }
+
+  &__largeBanner {
+    margin: -1.5rem;
+
+    &--matching {
+      height: 20rem;
+      padding: 4.5rem 16.7% 0 0;
+      background: url("./assets/matchingBg_sp.svg") no-repeat 0% 100%;
+      background-size: 91.6%;
+    }
+  }
+
+  &__largeBannerText {
+    display: block;
+    transition: opacity 0.35s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+    
+    &::after {
+      content: "";
+      display: block;
+      width: 3rem;
+      height: 3rem;
+      margin: space() auto;
+      background: url("./assets/button.svg") no-repeat 50% 50% / contain scroll;
+    }
+
+    &--matching {
+      width: 21rem;
+      margin: 0 auto;
+    }
+  }
+}
