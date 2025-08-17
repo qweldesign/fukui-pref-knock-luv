@@ -700,6 +700,19 @@ button, input, select, textarea {
   position: relative;
   height: 7.5rem;
 }
+.personalityTypes__header::after {
+  content: "";
+  position: absolute;
+  right: 3rem;
+  bottom: 0;
+  z-index: 0;
+  width: 25.5rem;
+  height: 7.5rem;
+  border: 2px solid var(--color--darkest);
+  background-color: #ffa188;
+  transform: skewX(-60deg);
+  transform-origin: bottom;
+}
 .personalityTypes__headerInner {
   position: absolute;
   right: 0;
@@ -719,18 +732,6 @@ button, input, select, textarea {
   letter-spacing: var(--small-letter-spacing);
   line-height: 1.2;
   text-align: center;
-}
-.personalityTypes__headerBg {
-  position: absolute;
-  right: 3rem;
-  bottom: 0;
-  z-index: 0;
-  width: 25.5rem;
-  height: 7.5rem;
-  border: 2px solid var(--color--darkest);
-  background-color: #ffa188;
-  transform: skewX(-60deg);
-  transform-origin: bottom;
 }
 .personalityTypes__body {
   position: relative;

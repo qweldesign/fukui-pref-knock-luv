@@ -6,6 +6,20 @@
   &__header {
     position: relative;
     height: 7.5rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 3rem;
+      bottom: 0;
+      z-index: 0;
+      width: 25.5rem;
+      height: 7.5rem;
+      border: 2px solid theme-color("darkest");
+      background-color: #ffa188;
+      transform: skewX(-60deg);
+      transform-origin: bottom;
+    }
   }
 
   &__headerInner {
@@ -27,19 +41,6 @@
     @include small-text();
     line-height: 1.2;
     text-align: center;
-  }
-
-  &__headerBg {
-    position: absolute;
-    right: 3rem;
-    bottom: 0;
-    z-index: 0;
-    width: 25.5rem;
-    height: 7.5rem;
-    border: 2px solid theme-color("darkest");
-    background-color: #ffa188;
-    transform: skewX(-60deg);
-    transform-origin: bottom;
   }
 
   &__body {
