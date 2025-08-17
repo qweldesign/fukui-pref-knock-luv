@@ -23,6 +23,7 @@
     border-radius: 1rem;
     font-weight: bold;
     font-size: 1.33rem;
+    background-color: theme-color("lightest");
     color: transparent; // 初期はマーク非表示
     transition: color 0.5s ease;
   }
