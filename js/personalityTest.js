@@ -57,7 +57,8 @@ const TYPE = {
 }
 
 export default class PersonalityTest {
-  constructor() {
+  constructor(debugMode = false) {
+    this.debugMode = debugMode;
     this.elem = document.getElementById('test');
     if (!this.elem) return;
     
@@ -144,12 +145,16 @@ export default class PersonalityTest {
   }
 
   getType(counts) {
-    const EI = (counts['E'] < counts['I']) ? 'I' : 'E';
-    const FT = (counts['F'] < counts['T']) ? 'T' : 'F';
-    const AP = (counts['A'] < counts['P']) ? 'P' : 'A';
-
+    const EI = (counts['E'] < counts['I']) ? 'i' : 'e';
+    const FT = (counts['F'] < counts['T']) ? 't' : 'f';
+    const AP = (counts['A'] < counts['P']) ? 'p' : 'a';
     const type = `${EI}${FT}${AP}`;
-    this.debugTest(counts, type);
+
+    if (this.debugMode) {
+      this.debugTest(counts, type);
+    } else {
+      location.href = `./result/#${type}`;
+    }
   }
 
   debugTest(counts, type) {
@@ -159,6 +164,7 @@ export default class PersonalityTest {
         .map(([key, value]) => `<li>${key}: ${value}</li>`)
         .join("") +
       `</ul>`;
+    type = type.toUpperCase();
     content.innerHTML = `<h3>${TYPE[type]}(${type})</h3>${html}`;
     this.goToNext();
   }

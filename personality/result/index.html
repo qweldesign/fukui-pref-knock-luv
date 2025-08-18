@@ -96,7 +96,6 @@
               </h2>
               <p class="personalityTypes__desc">アメリカ合衆国オレゴン州ポートランド。小麦出荷量全米あり、住みたい街ナンバー１、環境に優しい</p>
             </div>
-            <div class="personalityTypes__headerBg"></div>
           </div>
           <div class="personalityTypes__body">
             <div class="personalityTypes__row">
@@ -197,8 +196,17 @@
       <small>お問い合わせは TEL.0776-36-9300</small>
     </footer>
     <script type="module">
-      import PersonalityResult from '../../js/personalityResult.js';
-      new PersonalityResult();
+      //import PersonalityResult from '../../js/personalityResult.js';
+      //new PersonalityResult();
+      const hash = location.hash;
+      const types = ['efa', 'efp', 'eta', 'etp', 'ifa', 'ifp', 'ita', 'itp'];
+      const type = hash.slice(1);
+      if (types.includes(type)) {
+        const elem = document.querySelector('.personalityResult__image > img');
+        elem.setAttribute('src', `../../assets/type_${type}.jpg`)
+      } else {
+        location.href = '../';
+      }
     </script>
   </body>
 </html>
