@@ -40,13 +40,13 @@
   --spacing--large: 3rem;
   --spacing--x-large: 6rem;
   --font-family-base: "Noto Sans JP", "游ゴシック", "Yu Gothic", sans-serif;
-  --font-weight-base: 400;
+  --font-weight-base: 500;
   --line-height-base: 1.8;
   --letter-spacing-base: 0;
   --heading-margin-block-start: var(--spacing--medium);
   --heading-margin-block-end: var(--spacing--small);
   --heading-font-family: "Noto Sans JP", "游ゴシック", "Yu Gothic", sans-serif;
-  --heading-font-weight: 400;
+  --heading-font-weight: 500;
   --heading-line-height: 1.2;
   --heading-letter-spacing: 0;
   --font-size--x-small: 0.75rem;
@@ -210,6 +210,13 @@ button, input, select, textarea {
 }
 .container--eaf4ee {
   background-color: #eaf4ee;
+}
+.container--notepad {
+  background-color: var(--color--lightest);
+  background-image: linear-gradient(0deg, transparent calc(100% - 1px), var(--color--lighter) calc(100% - 1px)), linear-gradient(90deg, transparent calc(100% - 1px), var(--color--lighter) calc(100% - 1px));
+  background-size: 1.33rem 1.33rem;
+  background-repeat: repeat;
+  background-position: center center;
 }
 
 /**
@@ -429,6 +436,9 @@ button, input, select, textarea {
 .pageMain {
   padding: var(--spacing--medium);
 }
+.pageMain p {
+  text-align: justify;
+}
 .pageMain--column {
   margin-block-start: -3rem;
   padding-block-start: 0;
@@ -443,6 +453,10 @@ button, input, select, textarea {
 }
 .pageMain__column a:hover {
   opacity: 0.85;
+}
+.pageMain__figure {
+  width: 18rem;
+  margin: var(--spacing--medium) auto;
 }
 .pageMain__largeBanner {
   margin: -1.5rem;
@@ -471,6 +485,32 @@ button, input, select, textarea {
 .pageMain__largeBannerText--matching {
   width: 21rem;
   margin: 0 auto;
+}
+.pageMain__lead {
+  position: relative;
+  margin: var(--spacing--medium) 0;
+  border: 2px solid var(--color--darkest);
+  border-radius: var(--spacing--large);
+  background-color: var(--color--lightest);
+}
+.pageMain__lead::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: block;
+  width: 0;
+  height: 1.5rem;
+  margin: 0 auto;
+  border: 1px solid var(--color--darkest);
+}
+.pageMain__lead p {
+  font-weight: 700;
+  text-align: center;
+}
+.pageMain__image {
+  margin: var(--spacing--medium) 0;
 }
 
 /**
@@ -967,6 +1007,32 @@ button, input, select, textarea {
 .personalityTypes__viewmore a {
   padding-block-end: var(--spacing--x-small);
   border-block-end: 1px dashed var(--color--darkest);
+}
+
+/**
+ * Conponent - Text Media
+ */
+.textMedia {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: var(--spacing--small);
+}
+.textMedia__media {
+  flex: 1 1 30%;
+  order: 2;
+  margin: 0;
+}
+.textMedia__text {
+  flex: 2 2 60%;
+  order: 1;
+}
+.textMedia__text h3:has(img) {
+  width: 13.5rem;
+}
+.textMedia__largeText {
+  font-size: 1.5em;
 }
 
 /**

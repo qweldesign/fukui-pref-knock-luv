@@ -21,4 +21,12 @@
   &--eaf4ee {
     background-color: #eaf4ee;
   }
+
+  &--notepad {
+    background-color: theme-color("lightest");
+    background-image: linear-gradient(0deg, transparent calc(100% - 1px), theme-color("lighter") calc(100% - 1px)), linear-gradient(90deg, transparent calc(100% - 1px), theme-color("lighter") calc(100% - 1px));
+    background-size: 1.33rem 1.33rem;
+    background-repeat: repeat;
+    background-position: center center;
+  }
 }

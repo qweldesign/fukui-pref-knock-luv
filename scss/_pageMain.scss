@@ -5,6 +5,10 @@
 .pageMain {
   padding: space("medium");
 
+  p {
+    text-align: justify;
+  }
+
   &--column {
     margin-block-start: -3rem;
     padding-block-start: 0;
@@ -22,6 +26,11 @@
         opacity: 0.85;
       }
     }
+  }
+
+  &__figure {
+    width: 18rem;
+    margin: space("medium") auto;
   }
 
   &__largeBanner {
@@ -56,5 +65,35 @@
       width: 21rem;
       margin: 0 auto;
     }
+  }
+
+  &__lead {
+    position: relative;
+    margin: space("medium") 0;
+    border: 2px solid theme-color("darkest");
+    border-radius: space("large");
+    background-color: theme-color("lightest");
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      display: block;
+      width: 0;
+      height: 1.5rem;
+      margin: 0 auto;
+      border: 1px solid theme-color("darkest");
+    }
+
+    p {
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+
+  &__image {
+    margin: space("medium") 0;
   }
 }

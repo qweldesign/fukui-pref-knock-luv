@@ -1,0 +1,27 @@
+/**
+ * Conponent - Text Media
+ */
+
+.textMedia {
+  @include row();
+  gap: space();
+
+  &__media {
+    flex: 1 1 30%;
+    order: 2;
+    margin: 0;
+  }
+
+  &__text {
+    flex: 2 2 60%;
+    order: 1;
+
+    h3:has(img) {
+      width: 13.5rem;
+    }
+  }
+
+  &__largeText {
+    font-size: 1.5em;
+  }
+}
