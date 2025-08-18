@@ -37,4 +37,9 @@
     margin: 0 auto;
     text-align: justify;
   }
+
+  &__figure {
+    width: 21rem;
+    margin: space() auto space() space();
+  }
 }

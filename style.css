@@ -429,6 +429,10 @@ button, input, select, textarea {
   margin: 0 auto;
   text-align: justify;
 }
+.pageHeader__figure {
+  width: 21rem;
+  margin: var(--spacing--small) auto var(--spacing--small) var(--spacing--small);
+}
 
 /**
  * Project - Page Main
@@ -1007,6 +1011,94 @@ button, input, select, textarea {
 .personalityTypes__viewmore a {
   padding-block-end: var(--spacing--x-small);
   border-block-end: 1px dashed var(--color--darkest);
+}
+
+/**
+ * Project - Chat
+ */
+.chat {
+  list-style: none;
+  padding-inline-start: 0;
+  border: 2px solid var(--color--darkest);
+  border-radius: var(--spacing--medium);
+  background-color: var(--color--secondary);
+}
+.chat__item {
+  position: relative;
+}
+.chat__item--dr::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 6rem;
+  height: 5rem;
+  background: url("./assets/iconDr.png") no-repeat 50% 50%/contain scroll;
+}
+.chat__item--efa::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 6rem;
+  height: 5rem;
+  background: url("./assets/iconEFA.png") no-repeat 50% 50%/contain scroll;
+}
+.chat__balloon {
+  position: relative;
+  width: 15rem;
+  margin: var(--spacing--medium) auto;
+  padding: 0 var(--spacing--small);
+  border: 2px solid var(--color--darkest);
+  background-color: var(--color--lightest);
+}
+.chat__balloon.chat__balloon--left {
+  box-shadow: -0.5rem 0.5rem #fedf7b;
+}
+.chat__balloon.chat__balloon--left::before {
+  content: "";
+  position: absolute;
+  top: 1.75rem;
+  left: calc(2px - 2.25rem);
+  z-index: 2;
+  margin-block-start: -0.75rem;
+  border: 0.75rem solid transparent;
+  border-inline-end: 1.5rem solid var(--color--lightest);
+}
+.chat__balloon.chat__balloon--left:after {
+  content: "";
+  position: absolute;
+  top: 1.75rem;
+  left: calc(1px - 2.4rem);
+  z-index: 1;
+  margin-block-start: -0.8rem;
+  border: 0.8rem solid transparent;
+  border-inline-end: 1.6rem solid var(--color--darkest);
+}
+.chat__balloon.chat__balloon--right {
+  box-shadow: 0.5rem 0.5rem #ee8592;
+}
+.chat__balloon.chat__balloon--right::before {
+  content: "";
+  position: absolute;
+  top: 1.75rem;
+  right: calc(2px - 2.25rem);
+  z-index: 2;
+  margin-block-start: -0.75rem;
+  border: 0.75rem solid transparent;
+  border-inline-start: 1.5rem solid var(--color--lightest);
+}
+.chat__balloon.chat__balloon--right:after {
+  content: "";
+  position: absolute;
+  top: 1.75rem;
+  right: calc(1px - 2.4rem);
+  z-index: 1;
+  margin-block-start: -0.8rem;
+  border: 0.8rem solid transparent;
+  border-inline-start: 1.6rem solid var(--color--darkest);
 }
 
 /**

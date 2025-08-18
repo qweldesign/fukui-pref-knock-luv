@@ -1,0 +1,97 @@
+/**
+ * Project - Chat
+ */
+
+.chat {
+  @include list-unstyled();
+  border: 2px solid theme-color("darkest");
+  border-radius: space("medium");
+  background-color: theme-color("secondary");
+
+  &__item {
+    position: relative;
+
+    &--dr::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 6rem;
+      height: 5rem;
+      background: url("./assets/iconDr.png") no-repeat 50% 50% / contain scroll;
+    }
+
+    &--efa::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      width: 6rem;
+      height: 5rem;
+      background: url("./assets/iconEFA.png") no-repeat 50% 50% / contain scroll;
+    }
+  }
+
+  &__balloon {
+    position: relative;
+    width: 15rem;
+    margin: space("medium") auto;
+    padding: 0 space();
+    border: 2px solid theme-color("darkest");
+    background-color: theme-color("lightest");
+
+    &.chat__balloon--left {
+      box-shadow: -0.5rem 0.5rem #fedf7b;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 1.75rem;
+        left: calc(2px - 2.25rem);
+        z-index: 2;
+        margin-block-start: -0.75rem;
+        border: 0.75rem solid transparent;
+        border-inline-end: 1.5rem solid theme-color("lightest");
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 1.75rem;
+        left: calc(1px - 2.4rem);
+        z-index: 1;
+        margin-block-start: -0.8rem;
+        border: 0.8rem solid transparent;
+        border-inline-end: 1.6rem solid theme-color("darkest");
+      }
+    }
+
+    &.chat__balloon--right {
+      box-shadow: 0.5rem 0.5rem #ee8592;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 1.75rem;
+        right: calc(2px - 2.25rem);
+        z-index: 2;
+        margin-block-start: -0.75rem;
+        border: 0.75rem solid transparent;
+        border-inline-start: 1.5rem solid theme-color("lightest");
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 1.75rem;
+        right: calc(1px - 2.4rem);
+        z-index: 1;
+        margin-block-start: -0.8rem;
+        border: 0.8rem solid transparent;
+        border-inline-start: 1.6rem solid theme-color("darkest");
+      }
+    }
+  }
+}
