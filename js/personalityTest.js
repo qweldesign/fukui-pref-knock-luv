@@ -77,6 +77,11 @@ export default class PersonalityTest {
         }
       });
     });
+
+    const reset = document.getElementById('reset');
+    reset.addEventListener('click', () => {
+      location.reload();
+    });
   }
 
   ready() {

@@ -621,12 +621,13 @@ button, input, select, textarea {
 .personalityTest {
   position: relative;
   width: 100%;
-  height: 24rem;
+  height: 27rem;
   padding: var(--spacing--x-large) 0;
 }
 .personalityTest__main {
   position: absolute;
   inset: 0;
+  bottom: 3rem;
   width: 27rem;
   height: 18rem;
   margin: auto;
@@ -732,6 +733,37 @@ button, input, select, textarea {
 }
 .personalityTest__result ul, .personalityTest__result li {
   margin: 0;
+}
+.personalityTest__reset {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1.5rem;
+  display: block;
+  width: 12rem;
+  margin: auto;
+  padding-inline-end: 1.5rem;
+  border-block-end: 1px dashed transparent;
+  color: var(--color--lightest);
+  text-align: center;
+}
+.personalityTest__reset:hover {
+  border-block-end: 1px dashed var(--color--lightest);
+  color: var(--color--lightest);
+}
+.personalityTest__reset::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin: auto var(--spacing--medium);
+  border-top: 2px solid var(--color--lightest);
+  border-right: 2px solid var(--color--lightest);
+  transform: rotate(45deg);
 }
 
 @keyframes slide-out {
