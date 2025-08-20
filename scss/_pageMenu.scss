@@ -15,10 +15,10 @@
     padding: space();
     border-radius: space("large");
     background-color: theme-color("lightest");
-    
+
     &:hover {
-      transition: opacity 0.35s ease;
-      opacity: 0.85;
+      transform: translateY(-3px);
+      filter: drop-shadow(2px 4px 6px theme-color("darker"));
     }
 
     a {

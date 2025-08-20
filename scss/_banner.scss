@@ -1,0 +1,57 @@
+/**
+ * Component - Banner
+ */
+
+.banner {
+  display: flex;
+  align-items: center;
+  width: 27rem;
+  aspect-ratio: 9 / 2;
+  margin: space("large") auto;
+  padding: space();
+  background: url("./assets/bannerBg.svg") no-repeat 50% 50% / contain scroll;
+
+  &--siteMain {
+    @media (min-width: breakpoint("md")) {
+      width: clamp(27rem, 100%, 36rem);
+    }
+  }
+
+  &__inner {
+    a {
+      position: relative;
+      display: block;
+      width: calc(75% + 2.25rem);
+      margin: 0 auto;
+      padding-inline-end: 2.25rem;
+      
+      &:hover > img {
+        filter: drop-shadow(2px 4px 6px theme-color("darker"));
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        width: 2.25rem;
+        height: 2.25rem;
+        margin: auto;
+        background: url("./assets/button.svg") no-repeat 50% 50% / contain scroll;
+      }
+
+      &:hover::after {
+        filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px theme-color("darker"));
+      }
+    }
+
+    p {
+      margin-block: space("x-small");
+      color: theme-color("lightest");
+      @include small-text();
+      text-align: center;
+    }
+  }
+}
