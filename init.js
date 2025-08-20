@@ -5,6 +5,9 @@
  * Licensed under GPL v3 – see https://qwel.design/
  */
 
+import DrawerMenu from './js/drawerMenu.js';
+new DrawerMenu();
+
 import PersonalityTest from './js/personalityTest.js';
 new PersonalityTest();
 
