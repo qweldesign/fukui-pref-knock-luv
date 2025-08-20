@@ -125,7 +125,7 @@
       display: block;
 
       &:hover > img {
-        filter: drop-shadow(2px 4px 6px theme-color("darkest"));
+        filter: drop-shadow(2px 4px 6px theme-color("darker"));
       }
       
       &::after {
@@ -138,7 +138,7 @@
       }
 
       &:hover::after {
-        filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px theme-color("darkest"));
+        filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px theme-color("darker"));
       }
     }
 

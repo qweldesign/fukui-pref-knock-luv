@@ -387,7 +387,7 @@ button, input, select, textarea {
   display: block;
 }
 .siteMain__heading a:hover > img {
-  filter: drop-shadow(2px 4px 6px var(--color--darkest));
+  filter: drop-shadow(2px 4px 6px var(--color--darker));
 }
 .siteMain__heading a::after {
   content: "";
@@ -398,7 +398,7 @@ button, input, select, textarea {
   background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
 }
 .siteMain__heading a:hover::after {
-  filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px var(--color--darkest));
+  filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px var(--color--darker));
 }
 .siteMain__heading--personalitySp {
   width: 18rem;
@@ -488,10 +488,10 @@ button, input, select, textarea {
 }
 .pageMain__column a {
   display: block;
-  transition: opacity 0.35s ease;
 }
 .pageMain__column a:hover {
-  opacity: 0.85;
+  transform: translateY(-3px);
+  filter: drop-shadow(2px 4px 6px var(--color--darker));
 }
 .pageMain__figure {
   width: 18rem;
@@ -508,10 +508,9 @@ button, input, select, textarea {
 }
 .pageMain__largeBannerText {
   display: block;
-  transition: opacity 0.35s ease;
 }
-.pageMain__largeBannerText:hover {
-  opacity: 0.7;
+.pageMain__largeBannerText:hover > img {
+  filter: drop-shadow(2px 4px 6px var(--color--darker));
 }
 .pageMain__largeBannerText::after {
   content: "";
@@ -520,6 +519,9 @@ button, input, select, textarea {
   height: 3rem;
   margin: var(--spacing--small) auto;
   background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
+}
+.pageMain__largeBannerText:hover::after {
+  filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px var(--color--darker));
 }
 .pageMain__largeBannerText--matching {
   width: 21rem;
@@ -571,8 +573,8 @@ button, input, select, textarea {
   background-color: var(--color--lightest);
 }
 .pageMenu__item:hover {
-  transition: opacity 0.35s ease;
-  opacity: 0.85;
+  transform: translateY(-3px);
+  filter: drop-shadow(2px 4px 6px var(--color--darker));
 }
 .pageMenu__item a {
   display: block;
@@ -1043,6 +1045,132 @@ button, input, select, textarea {
 }
 
 /**
+ * Component - Icon
+ */
+.icon {
+  position: relative;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  overflow: hidden;
+  fill: currentColor;
+}
+.icon--md {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+.icon--lg {
+  width: 3rem;
+  height: 3rem;
+}
+.icon__span {
+  position: relative;
+  display: block;
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--color--lightest);
+  transition: border-color 0.25s ease;
+}
+.icon--menu .icon__span {
+  width: 60%;
+  height: 20%;
+  margin: 40% 20%;
+  border-block-start-width: 2px;
+  border-block-end-width: 2px;
+}
+.icon--close .icon__span::before, .icon--close .icon__span::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 60%;
+  height: 4%;
+  margin: 48% 20%;
+  border: 1px solid var(--color--lightest);
+  transform: rotate(-45deg);
+}
+.icon--close .icon__span::after {
+  transform: rotate(45deg);
+}
+.icon--chevron-up .icon__span {
+  width: 30%;
+  height: 30%;
+  margin: 35%;
+  border-block-start-width: 2px;
+  border-inline-start-width: 2px;
+  transform: rotate(45deg) translate(10%, 10%);
+}
+.icon--chevron-down .icon__span {
+  width: 30%;
+  height: 30%;
+  margin: 35%;
+  border-inline-end-width: 2px;
+  border-block-end-width: 2px;
+  transform: rotate(45deg) translate(-10%, -10%);
+}
+.icon--chevron-left .icon__span {
+  width: 30%;
+  height: 30%;
+  margin: 35%;
+  border-inline-start-width: 2px;
+  border-block-end-width: 2px;
+  transform: rotate(45deg) translate(10%, -10%);
+}
+.icon--chevron-right .icon__span {
+  width: 30%;
+  height: 30%;
+  margin: 35%;
+  border-block-start-width: 2px;
+  border-inline-end-width: 2px;
+  transform: rotate(45deg) translate(-10%, 10%);
+}
+
+/**
+ * Component - Back To Top
+ */
+.backToTop {
+  position: fixed;
+  right: var(--spacing--small);
+  bottom: calc(var(--spacing--small) + 4.5rem);
+  z-index: 1000;
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  opacity: 0;
+  transform: translateY(1rem) rotateY(-180deg);
+  transition: all 0.5s ease;
+  text-align: center;
+  outline: 0;
+  cursor: default;
+  pointer-events: none;
+}
+@media (min-width: 900px) {
+  .backToTop {
+    bottom: var(--spacing--small);
+  }
+}
+.backToTop--active {
+  opacity: 1;
+  transform: translateY(0) rotateY(0);
+  cursor: pointer;
+  pointer-events: auto;
+}
+.backToTop > .icon {
+  border-radius: 50%;
+  background-color: var(--color--primary--active);
+  transition: background-color 0.25s ease;
+}
+.backToTop > .icon > .icon__span, .backToTop > .icon > .icon__span::before, .backToTop > .icon > .icon__span::after {
+  border-color: var(--color--lightest);
+}
+.backToTop:hover > .icon {
+  background-color: var(--color--primary);
+}
+.backToTop:hover > .icon > .icon__span, .backToTop:hover > .icon > .icon__span::before, .backToTop:hover > .icon > .icon__span::after {
+  border-color: var(--color--darkest);
+}
+
+/**
  * Component - Banner
  */
 .banner {
@@ -1067,7 +1195,7 @@ button, input, select, textarea {
   padding-inline-end: 2.25rem;
 }
 .banner__inner a:hover > img {
-  filter: drop-shadow(2px 4px 6px var(--color--darkest));
+  filter: drop-shadow(2px 4px 6px var(--color--darker));
 }
 .banner__inner a::after {
   content: "";
@@ -1082,7 +1210,7 @@ button, input, select, textarea {
   background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
 }
 .banner__inner a:hover::after {
-  filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px var(--color--darkest));
+  filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px var(--color--darker));
 }
 .banner__inner p {
   margin-block: var(--spacing--x-small);
@@ -1096,11 +1224,9 @@ button, input, select, textarea {
 /**
  * Conponent - Button
  */
-.button {
-  transition: opacity 0.35s ease;
-}
-.button:hover {
-  opacity: 0.7;
+.button:hover img {
+  transform: translateY(-3px);
+  filter: drop-shadow(2px 4px 6px var(--color--darker));
 }
 
 /**
@@ -1189,86 +1315,6 @@ button, input, select, textarea {
   margin-block-start: -0.8rem;
   border: 0.8rem solid transparent;
   border-inline-start: 1.6rem solid var(--color--darkest);
-}
-
-/**
- * Component - Icon
- */
-.icon {
-  position: relative;
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  overflow: hidden;
-  fill: currentColor;
-}
-.icon--md {
-  width: 2.25rem;
-  height: 2.25rem;
-}
-.icon--lg {
-  width: 3rem;
-  height: 3rem;
-}
-.icon__span {
-  position: relative;
-  display: block;
-  border-width: 0;
-  border-style: solid;
-  border-color: var(--color--lightest);
-  transition: border-color 0.25s ease;
-}
-.icon--menu .icon__span {
-  width: 60%;
-  height: 20%;
-  margin: 40% 20%;
-  border-block-start-width: 2px;
-  border-block-end-width: 2px;
-}
-.icon--close .icon__span::before, .icon--close .icon__span::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 60%;
-  height: 4%;
-  margin: 48% 20%;
-  border: 1px solid var(--color--lightest);
-  transform: rotate(-45deg);
-}
-.icon--close .icon__span::after {
-  transform: rotate(45deg);
-}
-.icon--chevron-up .icon__span {
-  width: 30%;
-  height: 30%;
-  margin: 35%;
-  border-block-start-width: 2px;
-  border-inline-start-width: 2px;
-  transform: rotate(45deg) translate(10%, 10%);
-}
-.icon--chevron-down .icon__span {
-  width: 30%;
-  height: 30%;
-  margin: 35%;
-  border-inline-end-width: 2px;
-  border-block-end-width: 2px;
-  transform: rotate(45deg) translate(-10%, -10%);
-}
-.icon--chevron-left .icon__span {
-  width: 30%;
-  height: 30%;
-  margin: 35%;
-  border-inline-start-width: 2px;
-  border-block-end-width: 2px;
-  transform: rotate(45deg) translate(10%, -10%);
-}
-.icon--chevron-right .icon__span {
-  width: 30%;
-  height: 30%;
-  margin: 35%;
-  border-block-start-width: 2px;
-  border-inline-end-width: 2px;
-  transform: rotate(45deg) translate(-10%, 10%);
 }
 
 /**
@@ -1707,7 +1753,7 @@ button, input, select, textarea {
   display: flex;
   align-items: flex-end;
   width: 100%;
-  height: 6rem;
+  height: 4.5rem;
   overflow: hidden;
 }
 @media (min-width: 900px) {
@@ -1725,14 +1771,16 @@ button, input, select, textarea {
   transition: all 0.25s ease;
 }
 .floatingArea__button:hover {
-  transform: translateY(-3px);
-  filter: drop-shadow(2px 4px 6px var(--color--darkest));
+  filter: drop-shadow(2px 4px 6px var(--color--darker));
 }
 @media (min-width: 900px) {
   .floatingArea__button {
     position: relative;
     right: -2rem;
     width: 12rem;
+  }
+  .floatingArea__button:hover {
+    transform: translateY(-3px);
   }
   .floatingArea__button:nth-child(2) {
     top: -3rem;

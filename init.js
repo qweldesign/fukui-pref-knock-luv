@@ -5,6 +5,9 @@
  * Licensed under GPL v3 – see https://qwel.design/
  */
 
+import BackToTop from './js/backToTop.js'
+new BackToTop({size: 1.5});
+
 import DrawerMenu from './js/drawerMenu.js';
 new DrawerMenu();
 

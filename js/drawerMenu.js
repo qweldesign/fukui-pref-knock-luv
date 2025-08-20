@@ -41,7 +41,7 @@ export default class DrawerMenu {
     this.drawer.appendChild(this.close);
 
     // .drawerMenu
-    this.drawerMenu = document.createElement('div');
+    this.drawerMenu = document.createElement('nav');
     this.drawerMenu.classList.add('drawerMenu');
 
     // .drawerMenu__inner
