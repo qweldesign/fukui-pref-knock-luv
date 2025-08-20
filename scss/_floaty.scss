@@ -1,0 +1,34 @@
+/**
+ * Component - Floaty
+ */
+
+.floaty {
+  animation: floatY 3s ease-in-out infinite;
+  animation-play-state: paused; // まずは止めておく → 見えたら動かす
+  transform: translateY(0); // 入場transformとは別レイヤー
+
+  .is-inview & {
+    animation-play-state: running; // 親が inview になったら動かす
+  }
+}
+
+@keyframes floatY {
+  0%   {
+    transform: translateY(3px);
+  }
+
+  50%  {
+    transform: translateY(-3px);
+  }
+
+  100% {
+    transform: translateY(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floaty {
+    transform: none;
+    animation: none;
+  }
+}

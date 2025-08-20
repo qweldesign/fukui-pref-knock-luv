@@ -1278,6 +1278,35 @@ button, input, select, textarea {
 }
 
 /**
+ * Component - Floaty
+ */
+.floaty {
+  animation: floatY 3s ease-in-out infinite;
+  animation-play-state: paused;
+  transform: translateY(0);
+}
+.is-inview .floaty {
+  animation-play-state: running;
+}
+
+@keyframes floatY {
+  0% {
+    transform: translateY(3px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(3px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .floaty {
+    transform: none;
+    animation: none;
+  }
+}
+/**
  * Component - Reveal On Scroll
  */
 [data-reveal] {
