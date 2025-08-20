@@ -195,18 +195,6 @@
       <small>福井県福井市板垣3丁目1510番地</small>
       <small>お問い合わせは TEL.0776-36-9300</small>
     </footer>
-    <script type="module">
-      //import PersonalityResult from '../../js/personalityResult.js';
-      //new PersonalityResult();
-      const hash = location.hash;
-      const types = ['efa', 'efp', 'eta', 'etp', 'ifa', 'ifp', 'ita', 'itp'];
-      const type = hash.slice(1);
-      if (types.includes(type)) {
-        const elem = document.querySelector('.personalityResult__image > img');
-        elem.setAttribute('src', `../../assets/type_${type}.jpg`)
-      } else {
-        location.href = '../';
-      }
-    </script>
+    <script src="../init.js" type="module"></script>
   </body>
 </html>

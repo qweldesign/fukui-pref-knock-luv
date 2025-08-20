@@ -3,15 +3,17 @@
  */
 
 .siteMain {
-  padding-block-end: space("large");
+  padding-block: space("large");
   background-color: theme-color("secondary");
 
   &__section {
     width: 100%;
 
     &--personalitySp {
-      height: 62.5vw;
-      padding: 4.5rem 0 0 16.7%;
+      height: 50vw;
+      margin-block-start: 1.5rem;
+      margin-block-end: 4.5rem;
+      padding: 0 0 0 16.7%;
       background: url("./assets/personalityBg_sp.svg") no-repeat 100% 100%;
       background-size: 91.6%;
 
@@ -21,8 +23,9 @@
     }
 
     &--self-fSp {
-      height: 62.5vw;
-      padding: 4.5rem 16.7% 0 0;
+      height: 50vw;
+      margin-block: 4.5rem;
+      padding: 0 16.7% 0 0;
       background: url("./assets/self-fBg_sp.svg") no-repeat 0% 100%;
       background-size: 91.6%;
 
@@ -32,8 +35,9 @@
     }
 
     &--self-mSp {
-      height: 62.5vw;
-      padding: 4.5rem 0 0 16.7%;
+      height: 50vw;
+      margin-block: 4.5rem;
+      padding: 0 0 0 16.7%;
       background: url("./assets/self-mBg_sp.svg") no-repeat 100% 100%;
       background-size: 91.6%;
 
@@ -43,8 +47,9 @@
     }
 
     &--matchingSp {
-      height: 62.5vw;
-      padding: 4.5rem 16.7% 0 0;
+      height: 50vw;
+      margin-block: 4.5rem;
+      padding: 0 16.7% 0 0;
       background: url("./assets/matchingBg_sp.svg") no-repeat 0% 100%;
       background-size: 91.6%;
 
@@ -87,6 +92,30 @@
         padding: 10.5rem 25% 0 0;
         background: url("./assets/matchingBg_pc.svg") no-repeat 0% 100%;
         background-size: 91.6%;
+      }
+    }
+
+    &--columnSp {
+      height: 50vw;
+      margin-block: 4.5rem;
+      padding: 0 0 0 16.7%;
+      background: url("./assets/columnBg_sp.svg") no-repeat 100% 100%;
+      background-size: 91.6%;
+
+      @media (min-width: breakpoint("md")) {
+        display: none;
+      }
+    }
+
+    &--moneyplanSp {
+      height: 50vw;
+      margin-block: 4.5rem;
+      padding: 0 16.7% 0 0;
+      background: url("./assets/moneyplanBg_sp.svg") no-repeat 0% 100%;
+      background-size: 91.6%;
+
+      @media (min-width: breakpoint("md")) {
+        display: none;
       }
     }
   }
@@ -145,6 +174,11 @@
 
     &--matchingPc {
       width: 27rem;
+      margin: 0 auto;
+    }
+
+    &--columnSp, &--moneyplanSp {
+      width: 18rem;
       margin: 0 auto;
     }
   }

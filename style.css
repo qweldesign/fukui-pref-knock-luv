@@ -267,15 +267,17 @@ button, input, select, textarea {
  * Project - Site Header
  */
 .siteMain {
-  padding-block-end: var(--spacing--large);
+  padding-block: var(--spacing--large);
   background-color: var(--color--secondary);
 }
 .siteMain__section {
   width: 100%;
 }
 .siteMain__section--personalitySp {
-  height: 62.5vw;
-  padding: 4.5rem 0 0 16.7%;
+  height: 50vw;
+  margin-block-start: 1.5rem;
+  margin-block-end: 4.5rem;
+  padding: 0 0 0 16.7%;
   background: url("./assets/personalityBg_sp.svg") no-repeat 100% 100%;
   background-size: 91.6%;
 }
@@ -285,8 +287,9 @@ button, input, select, textarea {
   }
 }
 .siteMain__section--self-fSp {
-  height: 62.5vw;
-  padding: 4.5rem 16.7% 0 0;
+  height: 50vw;
+  margin-block: 4.5rem;
+  padding: 0 16.7% 0 0;
   background: url("./assets/self-fBg_sp.svg") no-repeat 0% 100%;
   background-size: 91.6%;
 }
@@ -296,8 +299,9 @@ button, input, select, textarea {
   }
 }
 .siteMain__section--self-mSp {
-  height: 62.5vw;
-  padding: 4.5rem 0 0 16.7%;
+  height: 50vw;
+  margin-block: 4.5rem;
+  padding: 0 0 0 16.7%;
   background: url("./assets/self-mBg_sp.svg") no-repeat 100% 100%;
   background-size: 91.6%;
 }
@@ -307,8 +311,9 @@ button, input, select, textarea {
   }
 }
 .siteMain__section--matchingSp {
-  height: 62.5vw;
-  padding: 4.5rem 16.7% 0 0;
+  height: 50vw;
+  margin-block: 4.5rem;
+  padding: 0 16.7% 0 0;
   background: url("./assets/matchingBg_sp.svg") no-repeat 0% 100%;
   background-size: 91.6%;
 }
@@ -354,6 +359,30 @@ button, input, select, textarea {
     background-size: 91.6%;
   }
 }
+.siteMain__section--columnSp {
+  height: 50vw;
+  margin-block: 4.5rem;
+  padding: 0 0 0 16.7%;
+  background: url("./assets/columnBg_sp.svg") no-repeat 100% 100%;
+  background-size: 91.6%;
+}
+@media (min-width: 900px) {
+  .siteMain__section--columnSp {
+    display: none;
+  }
+}
+.siteMain__section--moneyplanSp {
+  height: 50vw;
+  margin-block: 4.5rem;
+  padding: 0 16.7% 0 0;
+  background: url("./assets/moneyplanBg_sp.svg") no-repeat 0% 100%;
+  background-size: 91.6%;
+}
+@media (min-width: 900px) {
+  .siteMain__section--moneyplanSp {
+    display: none;
+  }
+}
 .siteMain__heading a {
   display: block;
 }
@@ -397,6 +426,10 @@ button, input, select, textarea {
 }
 .siteMain__heading--matchingPc {
   width: 27rem;
+  margin: 0 auto;
+}
+.siteMain__heading--columnSp, .siteMain__heading--moneyplanSp {
+  width: 18rem;
   margin: 0 auto;
 }
 
@@ -1007,6 +1040,57 @@ button, input, select, textarea {
 .personalityTypes__viewmore a {
   padding-block-end: var(--spacing--x-small);
   border-block-end: 1px dashed var(--color--darkest);
+}
+
+/**
+ * Component - Banner
+ */
+.banner {
+  display: flex;
+  align-items: center;
+  width: 27rem;
+  aspect-ratio: 9/2;
+  margin: var(--spacing--large) auto;
+  padding: var(--spacing--small);
+  background: url("./assets/bannerBg.svg") no-repeat 50% 50%/contain scroll;
+}
+@media (min-width: 900px) {
+  .banner--siteMain {
+    width: clamp(27rem, 100%, 36rem);
+  }
+}
+.banner__inner a {
+  position: relative;
+  display: block;
+  width: calc(75% + 2.25rem);
+  margin: 0 auto;
+  padding-inline-end: 2.25rem;
+}
+.banner__inner a:hover > img {
+  filter: drop-shadow(2px 4px 6px var(--color--darkest));
+}
+.banner__inner a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: auto;
+  background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
+}
+.banner__inner a:hover::after {
+  filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px var(--color--darkest));
+}
+.banner__inner p {
+  margin-block: var(--spacing--x-small);
+  color: var(--color--lightest);
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+  letter-spacing: var(--small-letter-spacing);
+  text-align: center;
 }
 
 /**
