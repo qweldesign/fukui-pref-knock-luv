@@ -356,10 +356,9 @@ button, input, select, textarea {
 }
 .siteMain__heading a {
   display: block;
-  transition: opacity 0.35s ease;
 }
-.siteMain__heading a:hover {
-  opacity: 0.7;
+.siteMain__heading a:hover > img {
+  filter: drop-shadow(2px 4px 6px var(--color--darkest));
 }
 .siteMain__heading a::after {
   content: "";
@@ -368,6 +367,9 @@ button, input, select, textarea {
   height: 3rem;
   margin: var(--spacing--small) auto;
   background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
+}
+.siteMain__heading a:hover::after {
+  filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px var(--color--darkest));
 }
 .siteMain__heading--personalitySp {
   width: 18rem;
@@ -700,20 +702,14 @@ button, input, select, textarea {
      -moz-user-select: none;
           user-select: none;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: all 0.25s ease;
   background-color: var(--color--tertiary);
   color: var(--color--lightest);
 }
 .personalityTest__button:hover {
   text-decoration: none;
-  transform: scale(96%);
-}
-.personalityTest__button:hover {
-  background-color: var(--color--tertiary--active);
-  color: var(--color--darkest);
-}
-.personalityTest__button:hover {
-  box-shadow: 0 0 var(--spacing--small) var(--color--tertiary);
+  transform: translateY(-3px);
+  box-shadow: 2px 4px 6px var(--color--darkest);
 }
 .personalityTest__main--start .personalityTest__button {
   bottom: 25%;
@@ -1246,35 +1242,24 @@ button, input, select, textarea {
      -moz-user-select: none;
           user-select: none;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: all 0.25s ease;
 }
 .form__buttons [type=submit]:hover, .form__buttons [type=button]:hover, .form__buttons [type=reset]:hover {
   text-decoration: none;
-  transform: scale(96%);
+  transform: translateY(-3px);
+  box-shadow: 2px 4px 6px var(--color--darkest);
 }
 .form__buttons [type=submit] {
   background-color: var(--color--primary);
   color: var(--color--darkest);
 }
-.form__buttons [type=submit]:hover {
-  background-color: var(--color--primary--active);
-  color: var(--color--lightest);
-}
 .form__buttons [type=button] {
   background-color: var(--color--secondary);
   color: var(--color--darkest);
 }
-.form__buttons [type=button]:hover {
-  background-color: var(--color--secondary--active);
-  color: var(--color--lightest);
-}
 .form__buttons [type=reset] {
   background-color: var(--color--tertiary);
   color: var(--color--lightest);
-}
-.form__buttons [type=reset]:hover {
-  background-color: var(--color--tertiary--active);
-  color: var(--color--darkest);
 }
 
 /**
@@ -1353,10 +1338,11 @@ button, input, select, textarea {
 .floatingArea__button {
   display: block;
   flex: 1 1 50%;
-  transition: opacity 0.35s ease;
+  transition: all 0.25s ease;
 }
 .floatingArea__button:hover {
-  opacity: 0.85;
+  transform: translateY(-3px);
+  filter: drop-shadow(2px 4px 6px var(--color--darkest));
 }
 @media (min-width: 900px) {
   .floatingArea__button {

@@ -31,12 +31,14 @@ $button-transform:         scale(96%) !default;
   outline: 0;
   user-select: none;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: all 0.25s ease;
 
   &:hover {
     text-decoration: none;
     @if ($button-transform-enabled) {
-      transform: $button-transform;
+      //transform: $button-transform;
+      transform: translateY(-3px);
+      box-shadow: 2px 4px 6px theme-color("darkest");
     }
   }
 }
@@ -48,11 +50,11 @@ $button-transform:         scale(96%) !default;
   } @else {
     @include make-button-color-normal($key);
   }
-  @if ($button-transform-enabled) {
-    &:hover {
-      box-shadow: 0 0 space() theme-color($key);
-    }
-  }
+  //@if ($button-transform-enabled) {
+  //  &:hover {
+  //    box-shadow: 0 0 space() theme-color($key);
+  //  }
+  //}
 }
 
 // 通常の色作成
@@ -60,10 +62,10 @@ $button-transform:         scale(96%) !default;
   background-color: theme-color($key);
   color: color-yiq($key);
 
-  &:hover {
-    background-color: color-active($key);
-    color: color-yiq($key, true);
-  }
+  //&:hover {
+  //  background-color: color-active($key);
+  //  color: color-yiq($key, true);
+  //}
 }
 
 // グラデーション作成

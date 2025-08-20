@@ -23,10 +23,11 @@
   &__button {
     display: block;
     flex: 1 1 50%;
-    transition: opacity 0.35s ease;
+    transition: all 0.25s ease;
 
     &:hover {
-      opacity: 0.85;
+      transform: translateY(-3px);
+      filter: drop-shadow(2px 4px 6px theme-color("darkest"));
     }
 
     @media (min-width: breakpoint("md")) {

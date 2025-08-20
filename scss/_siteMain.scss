@@ -94,10 +94,9 @@
   &__heading {
     a {
       display: block;
-      transition: opacity 0.35s ease;
 
-      &:hover {
-        opacity: 0.7;
+      &:hover > img {
+        filter: drop-shadow(2px 4px 6px theme-color("darkest"));
       }
       
       &::after {
@@ -107,6 +106,10 @@
         height: 3rem;
         margin: space() auto;
         background: url("./assets/button.svg") no-repeat 50% 50% / contain scroll;
+      }
+
+      &:hover::after {
+        filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px theme-color("darkest"));
       }
     }
 
