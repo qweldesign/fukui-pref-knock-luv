@@ -72,7 +72,6 @@
 
 html {
   font-size: 3.125vw;
-  scroll-behavior: smooth;
 }
 @media (min-width: 900px) {
   html {
@@ -428,8 +427,9 @@ button, input, select, textarea {
 }
 .pageHeader__desc {
   width: 27rem;
-  margin: 0 auto;
-  text-align: justify;
+  margin: var(--spacing--small) auto;
+  font-size: 0.875rem;
+  text-align: center;
 }
 .pageHeader__figure {
   width: 21rem;
@@ -853,7 +853,7 @@ button, input, select, textarea {
 }
 .personalityResult__lead > img {
   width: auto;
-  height: 1.25rem;
+  height: 1.17rem;
 }
 .personalityResult__content {
   padding: var(--spacing--small);
@@ -880,13 +880,17 @@ button, input, select, textarea {
 .personalityResult__headline {
   width: 83.33%;
   margin: 0 0 var(--spacing--small);
+  padding: var(--spacing--x-small);
   border: 1px solid var(--color--darkest);
-  border-radius: 0.5em;
+  border-radius: var(--spacing--medium);
+  font-size: 0.875rem;
   text-align: center;
 }
 .personalityResult__list {
   list-style: none;
   padding-inline-start: 0;
+  position: relative;
+  width: calc(100% + 1.5em);
   margin: 0;
   font-size: var(--small-font-size);
   line-height: var(--small-line-height);

@@ -74,7 +74,7 @@
 
     & > img {
       width: auto;
-      height: 1.25rem;
+      height: 1.17rem;
     }
   }
 
@@ -102,13 +102,17 @@
   &__headline {
     width: 83.33%;
     margin: 0 0 space();
+    padding: space("x-small");
     border: 1px solid $body-color;
-    border-radius: 0.5em;
+    border-radius: space("medium");
+    font-size: 0.875rem;
     text-align: center;
   }
 
   &__list {
     @include list-unstyled();
+    position: relative;
+    width: calc(100% + 1.5em);
     margin: 0;
     @include small-text();
   }
