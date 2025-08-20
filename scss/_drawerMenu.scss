@@ -15,7 +15,7 @@ $drawer-navicon-color:       $icon-hover-color !default;
 $drawer-navicon-hover-bg:    $icon-bg !default;
 $drawer-navicon-hover-color: $icon-color !default;
 $drawer-image-filter:        invert(1) grayscale(1) brightness(4) !default;
-$drawer-root-size:           14px;
+$drawer-root-size:           0.78125vw;
 
 .drawer {
   position: fixed;
@@ -77,12 +77,16 @@ $drawer-root-size:           14px;
   right: 0;
   bottom: 0;
   z-index: 1100;
-  width: $drawer-root-size * 27;
+  width: 27rem;
   height: 100%;
   margin: auto;
   background-color: $drawer-bg;
   text-align: center;
   transition: width 0.5s ease;
+
+  @media (min-width: breakpoint("md")) {
+    width: $drawer-root-size * 27;
+  }
   
   &:not(.drawerMenu--show) {
     width: 0;
@@ -92,12 +96,16 @@ $drawer-root-size:           14px;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    width: $drawer-root-size * 21;
+    width: 21rem;
     height: 100%;
     margin: 0 auto;
     padding-inline-start: 0;
     text-align: left;
     opacity: 1;
+
+    @media (min-width: breakpoint("md")) {
+      width: $drawer-root-size * 21;
+    }
     
     &:not(.drawerMenu__inner--show) {
       opacity: 0;
@@ -109,22 +117,41 @@ $drawer-root-size:           14px;
   }
 
   &__siteBrand, &__copyright {
-    width: $drawer-root-size * 21;
+    width: 21rem;
     margin: 0 auto;
+
+    @media (min-width: breakpoint("md")) {
+      width: $drawer-root-size * 21;
+    }
+  }
+
+  &__copyright {
+    width: 16.5rem;
+
+    @media (min-width: breakpoint("md")) {
+      width: $drawer-root-size * 18;
+    }
   }
 
   &__mainLink, &__subLink {
     display: block;
-    width: $drawer-root-size * 21;
-    margin: $drawer-root-size * 3 auto;
-    padding: $drawer-root-size * 1.5 0;
+    width: 21rem;
+    margin: 3rem auto;
+    padding: 1.5rem;
     border: 1px solid $icon-hover-bg;
-    border-radius: $drawer-root-size * 3;
+    border-radius: 3rem;
     background-color: theme-color("lightest");
     color: $icon-hover-bg;
-    font-size: $drawer-root-size;
     text-align: center;
     transition: all 0.25s ease;
+
+    @media (min-width: breakpoint("md")) {
+      width: $drawer-root-size * 21;
+      margin: $drawer-root-size * 3 auto;
+      padding: $drawer-root-size * 1.5 0;
+      border-radius: $drawer-root-size * 3;
+      font-size: $drawer-root-size;
+    }
 
     &:hover {
       border: 1px solid theme-color("lightest");
@@ -159,16 +186,20 @@ $drawer-root-size:           14px;
 
     a {
       display: block;
-      padding: $drawer-root-size * 0.375 $drawer-root-size * 0.75;
+      padding: 0.375rem 0.75rem;
       border-block-end: 1px solid theme-color("lightest");
       color: $drawer-color;
       fill: $drawer-color;
-      font-size: $drawer-root-size;
       text-decoration: none;
       transition: all 0.25s ease;
 
       @at-root .drawerMenu__item:nth-child(1) a {
         border-block-start: 1px solid theme-color("lightest");
+      }
+
+      @media (min-width: breakpoint("md")) { 
+        padding: $drawer-root-size * 0.375 $drawer-root-size * 0.75;
+        font-size: $drawer-root-size;
       }
 
       &:hover {

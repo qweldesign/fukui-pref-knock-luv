@@ -1350,12 +1350,17 @@ button, input, select, textarea {
   right: 0;
   bottom: 0;
   z-index: 1100;
-  width: 378px;
+  width: 27rem;
   height: 100%;
   margin: auto;
   background-color: var(--color--primary--active);
   text-align: center;
   transition: width 0.5s ease;
+}
+@media (min-width: 900px) {
+  .drawerMenu {
+    width: 21.09375vw;
+  }
 }
 .drawerMenu:not(.drawerMenu--show) {
   width: 0;
@@ -1364,12 +1369,17 @@ button, input, select, textarea {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  width: 294px;
+  width: 21rem;
   height: 100%;
   margin: 0 auto;
   padding-inline-start: 0;
   text-align: left;
   opacity: 1;
+}
+@media (min-width: 900px) {
+  .drawerMenu__inner {
+    width: 16.40625vw;
+  }
 }
 .drawerMenu__inner:not(.drawerMenu__inner--show) {
   opacity: 0;
@@ -1378,21 +1388,42 @@ button, input, select, textarea {
   display: none;
 }
 .drawerMenu__siteBrand, .drawerMenu__copyright {
-  width: 294px;
+  width: 21rem;
   margin: 0 auto;
+}
+@media (min-width: 900px) {
+  .drawerMenu__siteBrand, .drawerMenu__copyright {
+    width: 16.40625vw;
+  }
+}
+.drawerMenu__copyright {
+  width: 16.5rem;
+}
+@media (min-width: 900px) {
+  .drawerMenu__copyright {
+    width: 14.0625vw;
+  }
 }
 .drawerMenu__mainLink, .drawerMenu__subLink {
   display: block;
-  width: 294px;
-  margin: 42px auto;
-  padding: 21px 0;
+  width: 21rem;
+  margin: 3rem auto;
+  padding: 1.5rem;
   border: 1px solid var(--color--primary--active);
-  border-radius: 42px;
+  border-radius: 3rem;
   background-color: var(--color--lightest);
   color: var(--color--primary--active);
-  font-size: 14px;
   text-align: center;
   transition: all 0.25s ease;
+}
+@media (min-width: 900px) {
+  .drawerMenu__mainLink, .drawerMenu__subLink {
+    width: 16.40625vw;
+    margin: 2.34375vw auto;
+    padding: 1.171875vw 0;
+    border-radius: 2.34375vw;
+    font-size: 0.78125vw;
+  }
 }
 .drawerMenu__mainLink:hover, .drawerMenu__subLink:hover {
   border: 1px solid var(--color--lightest);
@@ -1422,11 +1453,10 @@ button, input, select, textarea {
 }
 .drawerMenu__item a {
   display: block;
-  padding: 5.25px 10.5px;
+  padding: 0.375rem 0.75rem;
   border-block-end: 1px solid var(--color--lightest);
   color: var(--color--lightest);
   fill: var(--color--lightest);
-  font-size: 14px;
   text-decoration: none;
   transition: all 0.25s ease;
 }
@@ -1434,6 +1464,12 @@ button, input, select, textarea {
   border-block-start: 1px solid var(--color--lightest);
 }
 
+@media (min-width: 900px) {
+  .drawerMenu__item a {
+    padding: 0.29296875vw 0.5859375vw;
+    font-size: 0.78125vw;
+  }
+}
 .drawerMenu__item a:hover {
   background-color: var(--color--primary);
   color: var(--color--darkest);
