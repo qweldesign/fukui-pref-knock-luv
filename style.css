@@ -16,15 +16,15 @@
   --color--dark: #808080;
   --color--dark--active: #b3b3b3;
   --color--light: #b3b3b3;
-  --color--light--active: gray;
+  --color--light--active: rgb(169.74, 137.26, 137.26);
   --color--lighter: #d9d9d9;
-  --color--lighter--active: #a6a6a6;
+  --color--lighter--active: rgb(201.66, 181.34, 181.34);
   --color--lightest: #ffffff;
-  --color--lightest--active: #cccccc;
+  --color--lightest--active: rgb(229.5, 229.5, 229.5);
   --color--primary: #edbccb;
-  --color--primary--active: rgb(215.4, 107.6, 140.6);
+  --color--primary--active: rgb(237.08, 136.92, 155.8958911565);
   --color--secondary: #66bf97;
-  --color--secondary--active: rgb(56.331797235, 134.668202765, 99.4608294931);
+  --color--secondary--active: rgb(52.0132718894, 189.9867281106, 144.0730892145);
   --color--tertiary: #9f77ad;
   --color--tertiary--active: rgb(203.9174311927, 182.6330275229, 211.3669724771);
   --container-width--sm: 37.5rem;
@@ -456,7 +456,7 @@ button, input, select, textarea {
   background: url("./assets/pageFg.png") no-repeat 50% 100%/contain scroll, #59ada9;
 }
 .pageHeader__title {
-  width: 27rem;
+  width: 24rem;
   margin: 0 auto;
 }
 .pageHeader__desc {
@@ -1300,17 +1300,17 @@ button, input, select, textarea {
 }
 .drawer__navicon > .icon {
   border-radius: 0;
-  background-color: var(--color--primary);
+  background-color: var(--color--primary--active);
   transition: background-color 0.25s ease;
 }
 .drawer__navicon > .icon > .icon__span, .drawer__navicon > .icon > .icon__span::before, .drawer__navicon > .icon > .icon__span::after {
-  border-color: var(--color--darkest);
+  border-color: var(--color--lightest);
 }
 .drawer__navicon:hover > .icon {
-  background-color: var(--color--primary--active);
+  background-color: var(--color--primary);
 }
 .drawer__navicon:hover > .icon > .icon__span, .drawer__navicon:hover > .icon > .icon__span::before, .drawer__navicon:hover > .icon > .icon__span::after {
-  border-color: var(--color--lightest);
+  border-color: var(--color--darkest);
 }
 .drawer:not(.drawer--active):not(.drawer--ready) .drawer__navicon {
   opacity: 1;
@@ -1327,17 +1327,17 @@ button, input, select, textarea {
 }
 .drawer__close > .icon {
   border-radius: 0;
-  background-color: var(--color--primary);
+  background-color: transparent;
   transition: background-color 0.25s ease;
 }
 .drawer__close > .icon > .icon__span, .drawer__close > .icon > .icon__span::before, .drawer__close > .icon > .icon__span::after {
-  border-color: var(--color--darkest);
+  border-color: var(--color--lightest);
 }
 .drawer__close:hover > .icon {
-  background-color: var(--color--primary);
+  background-color: transparent;
 }
 .drawer__close:hover > .icon > .icon__span, .drawer__close:hover > .icon > .icon__span::before, .drawer__close:hover > .icon > .icon__span::after {
-  border-color: var(--color--lightest);
+  border-color: var(--color--darkest);
 }
 .drawer:not(.drawer--active) .drawer__close {
   opacity: 0;
@@ -1350,10 +1350,10 @@ button, input, select, textarea {
   right: 0;
   bottom: 0;
   z-index: 1100;
-  width: 91.6%;
+  width: 378px;
   height: 100%;
   margin: auto;
-  background-color: var(--color--primary);
+  background-color: var(--color--primary--active);
   text-align: center;
   transition: width 0.5s ease;
 }
@@ -1364,8 +1364,9 @@ button, input, select, textarea {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
+  width: 294px;
   height: 100%;
-  margin: 0;
+  margin: 0 auto;
   padding-inline-start: 0;
   text-align: left;
   opacity: 1;
@@ -1376,16 +1377,43 @@ button, input, select, textarea {
 .drawerMenu__inner--collapse {
   display: none;
 }
-.drawerMenu__primaryMenu, .drawerMenu__socialMenu {
+.drawerMenu__siteBrand, .drawerMenu__copyright {
+  width: 294px;
+  margin: 0 auto;
+}
+.drawerMenu__mainLink, .drawerMenu__subLink {
+  display: block;
+  width: 294px;
+  margin: 42px auto;
+  padding: 21px 0;
+  border: 1px solid var(--color--primary--active);
+  border-radius: 42px;
+  background-color: var(--color--lightest);
+  color: var(--color--primary--active);
+  font-size: 14px;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+.drawerMenu__mainLink:hover, .drawerMenu__subLink:hover {
+  border: 1px solid var(--color--lightest);
+  background-color: var(--color--primary--active);
+  color: var(--color--lightest);
+}
+.drawerMenu__subLink {
+  border: 1px solid var(--color--lightest);
+  background-color: var(--color--primary--active);
+  color: var(--color--lightest);
+}
+.drawerMenu__subLink:hover {
+  border: 1px solid var(--color--primary--active);
+  background-color: var(--color--lightest);
+  color: var(--color--primary--active);
+}
+.drawerMenu__primaryMenu {
   list-style: none;
   flex: 1 1 100%;
+  margin-block: 0;
   padding-inline-start: 0;
-}
-.drawerMenu__socialMenu {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-inline-start: 20%;
 }
 .drawerMenu__item {
   width: 100%;
@@ -1394,45 +1422,22 @@ button, input, select, textarea {
 }
 .drawerMenu__item a {
   display: block;
-  padding-block: var(--spacing--x-small);
-  padding-inline-start: 20%;
-  color: var(--color--darkest);
-  fill: var(--color--darkest);
+  padding: 5.25px 10.5px;
+  border-block-end: 1px solid var(--color--lightest);
+  color: var(--color--lightest);
+  fill: var(--color--lightest);
+  font-size: 14px;
   text-decoration: none;
   transition: all 0.25s ease;
 }
+.drawerMenu__item:nth-child(1) a {
+  border-block-start: 1px solid var(--color--lightest);
+}
+
 .drawerMenu__item a:hover {
-  background-color: var(--color--primary--active);
-  color: var(--color--lightest);
-  fill: var(--color--lightest);
-}
-.drawerMenu__item--siteBrand {
-  padding-block: 1rem;
-  font-size: var(--font-size--x-large);
-}
-.drawerMenu__item--siteBrand a {
-  padding: 0 0 0 20%;
-}
-.drawerMenu__item--siteBrand img {
-  width: auto;
-  height: 3rem;
-}
-.drawerMenu__item--social {
-  width: -moz-fit-content;
-  width: fit-content;
-  padding-block: 1rem;
-}
-.drawerMenu__item--social a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 3rem;
-  height: 3rem;
-  padding: 0;
-}
-.drawerMenu__item--social img {
-  width: 100%;
-  height: auto;
+  background-color: var(--color--primary);
+  color: var(--color--darkest);
+  fill: var(--color--darkest);
 }
 
 .drawerMenuOverlay {

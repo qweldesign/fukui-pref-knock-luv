@@ -68,7 +68,7 @@ $body-color:       theme-color("darkest") !default;
   @if (get-color-yiq($key)) {
     @return lighten($color, 20%);
   } @else {
-    @return darken($color, 20%);
+    @return darken(saturate(adjust-hue($color, 7), 16%), 10%);
   }
 }
 

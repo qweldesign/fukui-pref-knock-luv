@@ -13,7 +13,7 @@ export default class DrawerMenu {
     //this.siteBrand = options.siteBrand ||
     //  document.querySelector('.gNav__siteBrand');
     this.primaryMenu = options.primaryMenu ||
-      document.querySelector('.primaryMenu');
+      document.getElementById('drawerMenu');
     //this.socialMenu = options.socialMenu ||
     //  document.querySelector('.gNav__socialMenu');
 
@@ -109,16 +109,9 @@ export default class DrawerMenu {
   }
 
   importMenu() {
-    // メニューアイテムをインポート
-    //if (this.siteBrand) {
-    //  this.importSiteBrand(); // .drawerMenu__siteBrand
-    //}
-    if (this.primaryMenu) {
-      this.importPrimaryMenu(); // .drawerMenu__primaryMenu
-    }
-    //if (this.socialMenu) {
-    //  this.importSocialMenu(); // .drawerMenu__socialMenu
-    //}
+    const template = this.primaryMenu;
+    const clone = template.content.cloneNode(true);
+    this.menu.appendChild(clone);
   }
 
   importSiteBrand() {
