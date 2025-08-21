@@ -83,7 +83,7 @@
 
       &:hover {
         transform: translateY(-3px);
-        filter: drop-shadow(2px 4px 6px theme-color("darker"));
+        filter: drop-shadow(2px 4px 6px theme-color("dark"));
       }
     }
   }
@@ -115,7 +115,7 @@
     display: block;
 
     &:hover > img {
-      filter: drop-shadow(2px 4px 6px theme-color("darker"));
+      filter: drop-shadow(2px 4px 6px theme-color("dark"));
     }
     
     &::after {
@@ -128,7 +128,7 @@
     }
 
     &:hover::after {
-      filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px theme-color("darker"));
+      filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px theme-color("dark"));
     }
 
     &--matching {

@@ -26,7 +26,7 @@
       padding-inline-end: 2.25rem;
       
       &:hover > img {
-        filter: drop-shadow(2px 4px 6px theme-color("darker"));
+        filter: drop-shadow(2px 4px 6px theme-color("dark"));
       }
 
       &::after {
@@ -43,7 +43,7 @@
       }
 
       &:hover::after {
-        filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px theme-color("darker"));
+        filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px theme-color("dark"));
       }
     }
 

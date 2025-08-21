@@ -386,7 +386,7 @@ button, input, select, textarea {
   display: block;
 }
 .siteMain__heading a:hover > img {
-  filter: drop-shadow(2px 4px 6px var(--color--darker));
+  filter: drop-shadow(2px 4px 6px var(--color--dark));
 }
 .siteMain__heading a::after {
   content: "";
@@ -397,7 +397,7 @@ button, input, select, textarea {
   background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
 }
 .siteMain__heading a:hover::after {
-  filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px var(--color--darker));
+  filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px var(--color--dark));
 }
 .siteMain__heading--personalitySp {
   width: 18rem;
@@ -542,7 +542,7 @@ button, input, select, textarea {
 }
 .pageMain__column a:hover {
   transform: translateY(-3px);
-  filter: drop-shadow(2px 4px 6px var(--color--darker));
+  filter: drop-shadow(2px 4px 6px var(--color--dark));
 }
 .pageMain__decrationText::before {
   content: "●";
@@ -565,7 +565,7 @@ button, input, select, textarea {
   display: block;
 }
 .pageMain__largeBannerText:hover > img {
-  filter: drop-shadow(2px 4px 6px var(--color--darker));
+  filter: drop-shadow(2px 4px 6px var(--color--dark));
 }
 .pageMain__largeBannerText::after {
   content: "";
@@ -576,7 +576,7 @@ button, input, select, textarea {
   background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
 }
 .pageMain__largeBannerText:hover::after {
-  filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px var(--color--darker));
+  filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px var(--color--dark));
 }
 .pageMain__largeBannerText--matching {
   width: 21rem;
@@ -656,7 +656,7 @@ button, input, select, textarea {
 }
 .pageMenu__item:hover {
   transform: translateY(-3px);
-  filter: drop-shadow(2px 4px 6px var(--color--darker));
+  filter: drop-shadow(2px 4px 6px var(--color--dark));
 }
 .pageMenu__item a {
   display: block;
@@ -1313,7 +1313,7 @@ button, input, select, textarea {
   padding-inline-end: 2.25rem;
 }
 .banner__inner a:hover > img {
-  filter: drop-shadow(2px 4px 6px var(--color--darker));
+  filter: drop-shadow(2px 4px 6px var(--color--dark));
 }
 .banner__inner a::after {
   content: "";
@@ -1328,7 +1328,7 @@ button, input, select, textarea {
   background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
 }
 .banner__inner a:hover::after {
-  filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px var(--color--darker));
+  filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px var(--color--dark));
 }
 .banner__inner p {
   margin-block: var(--spacing--x-small);
@@ -1344,7 +1344,7 @@ button, input, select, textarea {
  */
 .button:hover img {
   transform: translateY(-3px);
-  filter: drop-shadow(2px 4px 6px var(--color--darker));
+  filter: drop-shadow(2px 4px 6px var(--color--dark));
 }
 
 /**
@@ -1889,7 +1889,7 @@ button, input, select, textarea {
   transition: all 0.25s ease;
 }
 .floatingArea__button:hover {
-  filter: drop-shadow(2px 4px 6px var(--color--darker));
+  filter: drop-shadow(2px 4px 6px var(--color--dark));
 }
 @media (min-width: 900px) {
   .floatingArea__button {
