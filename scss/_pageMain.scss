@@ -5,6 +5,12 @@
 .pageMain {
   padding: space("medium");
 
+  h4 {
+    color: #ed899c;
+    font-size: 1.33rem;
+    text-align: center;
+  }
+
   p {
     text-align: justify;
   }
@@ -33,7 +39,7 @@
     }
 
     &--large {
-      width: 27rem;
+      width: 100%;
       margin-block: space("medium");
       padding-block: space("small");
 
@@ -148,9 +154,14 @@
       border: 1px solid theme-color("darkest");
     }
 
-    p {
+    h3, p {
+      margin-block: space();
       font-weight: 700;
       text-align: center;
+    }
+
+    h3 {
+      font-size: 1.17rem;
     }
   }
 

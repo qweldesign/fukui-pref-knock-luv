@@ -440,6 +440,11 @@ button, input, select, textarea {
 .pageMain {
   padding: var(--spacing--medium);
 }
+.pageMain h4 {
+  color: #ed899c;
+  font-size: 1.33rem;
+  text-align: center;
+}
 .pageMain p {
   text-align: justify;
 }
@@ -465,7 +470,7 @@ button, input, select, textarea {
   height: 1.25rem;
 }
 .pageMain__button--large {
-  width: 27rem;
+  width: 100%;
   margin-block: var(--spacing--medium);
   padding-block: var(--spacing--small);
 }
@@ -559,9 +564,13 @@ button, input, select, textarea {
   margin: 0 auto;
   border: 1px solid var(--color--darkest);
 }
-.pageMain__lead p {
+.pageMain__lead h3, .pageMain__lead p {
+  margin-block: var(--spacing--small);
   font-weight: 700;
   text-align: center;
+}
+.pageMain__lead h3 {
+  font-size: 1.17rem;
 }
 .pageMain__list {
   list-style: none;
