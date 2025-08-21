@@ -5,6 +5,12 @@
 .pageMain {
   padding: space("medium");
 
+  h4 {
+    color: #ed899c;
+    font-size: 1.33rem;
+    text-align: center;
+  }
+
   p {
     text-align: justify;
   }
@@ -13,6 +19,60 @@
     margin-block-start: -3rem;
     padding-block-start: 0;
     padding-block-end: 3rem;
+  }
+
+  &__button {
+    position: relative;
+    display: block;
+    width: 24rem;
+    margin: space() auto;
+    padding-block: space("x-small");
+    padding-inline-end: space("medium");
+    border: 1px solid #ed899c;
+    border-radius: space("medium");
+    background-color: #ed899c;
+    text-align: center;
+    
+    & > img {
+      width: auto;
+      height: 1.25rem;
+    }
+
+    &--large {
+      width: 100%;
+      margin-block: space("medium");
+      padding-block: space("small");
+
+      & > img {
+        height: 1.5rem;
+      }
+    }
+
+    &--small {
+      width: 21rem;
+
+      & > img {
+        height: 1.5rem;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      filter: drop-shadow(2px 4px 6px theme-color("darker"));
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      width: 1.75rem;
+      height: 1.75rem;
+      margin: auto space();
+      background: url("./assets/button.svg") no-repeat 50% 50% / contain scroll;
+    }
   }
 
   &__column {
@@ -25,6 +85,13 @@
         transform: translateY(-3px);
         filter: drop-shadow(2px 4px 6px theme-color("darker"));
       }
+    }
+  }
+
+  &__decrationText {
+    &::before {
+      content: "●";
+      color: #ed899c;
     }
   }
 
@@ -90,13 +157,46 @@
       border: 1px solid theme-color("darkest");
     }
 
-    p {
+    h3, p {
+      margin-block: space();
       font-weight: 700;
       text-align: center;
     }
+
+    h3 {
+      font-size: 1.17rem;
+    }
+  }
+
+  &__list {
+    @include list-unstyled();
   }
 
   &__image {
     margin: space("medium") 0;
+  }
+
+  &__subHeading {
+    margin-inline: auto;
+
+    &--qa {
+      width: 18rem;
+    }
+
+    &--free {
+      width: 21rem;
+      text-align: center;
+
+      & > img {
+        display: inline-block;
+        width: 15rem;
+      }
+
+      & span {
+        display: inline-block;
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
   }
 }

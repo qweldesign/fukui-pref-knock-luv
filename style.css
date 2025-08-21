@@ -475,6 +475,11 @@ button, input, select, textarea {
 .pageMain {
   padding: var(--spacing--medium);
 }
+.pageMain h4 {
+  color: #ed899c;
+  font-size: 1.33rem;
+  text-align: center;
+}
 .pageMain p {
   text-align: justify;
 }
@@ -482,6 +487,52 @@ button, input, select, textarea {
   margin-block-start: -3rem;
   padding-block-start: 0;
   padding-block-end: 3rem;
+}
+.pageMain__button {
+  position: relative;
+  display: block;
+  width: 24rem;
+  margin: var(--spacing--small) auto;
+  padding-block: var(--spacing--x-small);
+  padding-inline-end: var(--spacing--medium);
+  border: 1px solid #ed899c;
+  border-radius: var(--spacing--medium);
+  background-color: #ed899c;
+  text-align: center;
+}
+.pageMain__button > img {
+  width: auto;
+  height: 1.25rem;
+}
+.pageMain__button--large {
+  width: 100%;
+  margin-block: var(--spacing--medium);
+  padding-block: var(--spacing--small);
+}
+.pageMain__button--large > img {
+  height: 1.5rem;
+}
+.pageMain__button--small {
+  width: 21rem;
+}
+.pageMain__button--small > img {
+  height: 1.5rem;
+}
+.pageMain__button:hover {
+  transform: translateY(-3px);
+  filter: drop-shadow(2px 4px 6px var(--color--darker));
+}
+.pageMain__button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: auto var(--spacing--small);
+  background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
 }
 .pageMain__column {
   margin: var(--spacing--medium);
@@ -492,6 +543,10 @@ button, input, select, textarea {
 .pageMain__column a:hover {
   transform: translateY(-3px);
   filter: drop-shadow(2px 4px 6px var(--color--darker));
+}
+.pageMain__decrationText::before {
+  content: "●";
+  color: #ed899c;
 }
 .pageMain__figure {
   width: 18rem;
@@ -546,12 +601,39 @@ button, input, select, textarea {
   margin: 0 auto;
   border: 1px solid var(--color--darkest);
 }
-.pageMain__lead p {
+.pageMain__lead h3, .pageMain__lead p {
+  margin-block: var(--spacing--small);
   font-weight: 700;
   text-align: center;
 }
+.pageMain__lead h3 {
+  font-size: 1.17rem;
+}
+.pageMain__list {
+  list-style: none;
+  padding-inline-start: 0;
+}
 .pageMain__image {
   margin: var(--spacing--medium) 0;
+}
+.pageMain__subHeading {
+  margin-inline: auto;
+}
+.pageMain__subHeading--qa {
+  width: 18rem;
+}
+.pageMain__subHeading--free {
+  width: 21rem;
+  text-align: center;
+}
+.pageMain__subHeading--free > img {
+  display: inline-block;
+  width: 15rem;
+}
+.pageMain__subHeading--free span {
+  display: inline-block;
+  width: 100%;
+  font-size: 1rem;
 }
 
 /**
