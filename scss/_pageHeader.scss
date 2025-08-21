@@ -30,6 +30,12 @@
   &__title {
     width: 24rem;
     margin: 0 auto;
+
+    &:not(:has(img)) {
+      margin-block-start: space("large");
+      margin-block-end: space("medium");
+      text-align: center;
+    }
   }
 
   &__desc {

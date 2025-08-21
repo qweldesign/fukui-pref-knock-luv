@@ -3,7 +3,7 @@
 $button-width:             10.5rem !default; // 標準幅は2col内に収まる
 $button-height:            3.5rem !default; // 標準高さは、標準幅の3分の1とする
 $button-max-height:        4.5rem !default; // 最大高さを設ける
-$boutton-rounded:          space("x-small") !default;
+$boutton-rounded:          space("large") !default;
 $button-gradient-enabled:  false !default;
 $button-transform-enabled: true !default;
 $button-transform:         scale(96%) !default;
@@ -66,6 +66,12 @@ $button-transform:         scale(96%) !default;
   //  background-color: color-active($key);
   //  color: color-yiq($key, true);
   //}
+}
+
+// アクティブ色作成
+@mixin make-button-color-active($key: $theme-accent) {
+  background-color: color-active($key);
+  color: color-yiq($key, true);
 }
 
 // グラデーション作成

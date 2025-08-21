@@ -56,6 +56,11 @@
       }
     }
 
+    &--backToTop {
+      width: 18rem;
+      margin-block: space("medium");
+    }
+
     &:hover {
       transform: translateY(-3px);
       filter: drop-shadow(2px 4px 6px theme-color("darker"));
@@ -98,6 +103,11 @@
   &__figure {
     width: 18rem;
     margin: space("medium") auto;
+  }
+
+  &__heading {
+    margin: space("large") 0 space();
+    font-size: 1.17rem;
   }
 
   &__largeBanner {

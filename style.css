@@ -475,6 +475,11 @@ button, input, select, textarea {
   width: 24rem;
   margin: 0 auto;
 }
+.pageHeader__title:not(:has(img)) {
+  margin-block-start: var(--spacing--large);
+  margin-block-end: var(--spacing--medium);
+  text-align: center;
+}
 .pageHeader__desc {
   width: 27rem;
   margin: var(--spacing--small) auto;
@@ -535,6 +540,10 @@ button, input, select, textarea {
 .pageMain__button--small > img {
   height: 1.5rem;
 }
+.pageMain__button--backToTop {
+  width: 18rem;
+  margin-block: var(--spacing--medium);
+}
 .pageMain__button:hover {
   transform: translateY(-3px);
   filter: drop-shadow(2px 4px 6px var(--color--darker));
@@ -568,6 +577,10 @@ button, input, select, textarea {
 .pageMain__figure {
   width: 18rem;
   margin: var(--spacing--medium) auto;
+}
+.pageMain__heading {
+  margin: var(--spacing--large) 0 var(--spacing--small);
+  font-size: 1.17rem;
 }
 .pageMain__largeBanner {
   margin: -1.5rem;
@@ -1792,7 +1805,24 @@ button, input, select, textarea {
   padding: 0 var(--spacing--small) var(--spacing--small);
   font-size: 0.875rem;
 }
+.form__privacy-policy {
+  border-block-end: 1px dashed transparent;
+}
+.form__privacy-policy:hover {
+  border-block-end: 1px dashed var(--color--darkest);
+}
+.form__privacy-policy::after {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: auto 0 auto var(--spacing--medium);
+  border-top: 2px solid var(--color--darkest);
+  border-right: 2px solid var(--color--darkest);
+  transform: rotate(45deg);
+}
 .form__buttons {
+  margin-block: var(--spacing--medium);
   text-align: center;
 }
 .form__buttons [type=submit], .form__buttons [type=button], .form__buttons [type=reset] {
@@ -1802,7 +1832,7 @@ button, input, select, textarea {
   line-height: 3.5rem;
   margin-inline: auto;
   border: 0;
-  border-radius: var(--spacing--x-small);
+  border-radius: var(--spacing--large);
   text-align: center;
   text-decoration: none;
   word-break: break-word;
@@ -1819,8 +1849,8 @@ button, input, select, textarea {
   box-shadow: 2px 4px 6px var(--color--darkest);
 }
 .form__buttons [type=submit] {
-  background-color: var(--color--primary);
-  color: var(--color--darkest);
+  background-color: var(--color--primary--active);
+  color: var(--color--lightest);
 }
 .form__buttons [type=button] {
   background-color: var(--color--secondary);
