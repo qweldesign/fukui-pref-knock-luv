@@ -63,8 +63,9 @@
 
       @media (min-width: breakpoint("md")) {
         display: block;
-        height: 50vw;
-        padding: 10.5rem 0 0 25%;
+        height: 40vw;
+        margin-block: 4.5rem;
+        padding: 3rem 0 0 25%;
         background: url("./assets/personalityBg_pc.svg") no-repeat 100% 100%;
         background-size: 91.6%;
       }
@@ -76,8 +77,9 @@
       @media (min-width: breakpoint("md")) {
         display: flex;
         gap: 9rem;
-        height: 50vw;
-        padding: 10.5rem 25% 0 0;
+        height: 40vw;
+        margin-block: 4.5rem;
+        padding: 3rem 25% 0 0;
         background: url("./assets/selfBg_pc.svg") no-repeat 0% 100%;
         background-size: 91.6%;
       }
@@ -88,8 +90,9 @@
 
       @media (min-width: breakpoint("md")) {
         display: block;
-        height: 50vw;
-        padding: 10.5rem 25% 0 0;
+        height: 40vw;
+        margin-block: 4.5rem;
+        padding: 3rem 25% 0 0;
         background: url("./assets/matchingBg_pc.svg") no-repeat 0% 100%;
         background-size: 91.6%;
       }
@@ -116,6 +119,20 @@
 
       @media (min-width: breakpoint("md")) {
         display: none;
+      }
+    }
+
+    &--columnPc {
+      display: none;
+
+      @media (min-width: breakpoint("md")) {
+        display: flex;
+        gap: 9rem;
+        height: 40vw;
+        margin-block: 4.5rem;
+        padding: 3rem 0 0 25%;
+        background: url("./assets/columnBg_pc.svg") no-repeat 100% 100%;
+        background-size: 91.6%;
       }
     }
   }
