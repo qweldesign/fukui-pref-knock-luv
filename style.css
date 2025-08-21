@@ -1531,17 +1531,12 @@ button, input, select, textarea {
   right: 0;
   bottom: 0;
   z-index: 1100;
-  width: 27rem;
+  width: 100%;
   height: 100%;
   margin: auto;
   background-color: var(--color--primary--active);
   text-align: center;
   transition: width 0.5s ease;
-}
-@media (min-width: 900px) {
-  .drawerMenu {
-    width: 21.09375vw;
-  }
 }
 .drawerMenu:not(.drawerMenu--show) {
   width: 0;
@@ -1550,16 +1545,16 @@ button, input, select, textarea {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  width: 21rem;
+  width: 24rem;
   height: 100%;
   margin: 0 auto;
   padding-inline-start: 0;
   text-align: left;
   opacity: 1;
 }
-@media (min-width: 900px) {
+@media (min-width: 600px) {
   .drawerMenu__inner {
-    width: 16.40625vw;
+    width: 45vh;
   }
 }
 .drawerMenu__inner:not(.drawerMenu__inner--show) {
@@ -1569,25 +1564,26 @@ button, input, select, textarea {
   display: none;
 }
 .drawerMenu__siteBrand, .drawerMenu__copyright {
-  width: 21rem;
+  width: 24rem;
   margin: 0 auto;
 }
-@media (min-width: 900px) {
+@media (min-width: 600px) {
   .drawerMenu__siteBrand, .drawerMenu__copyright {
-    width: 16.40625vw;
+    width: 45vh;
   }
 }
 .drawerMenu__copyright {
-  width: 16.5rem;
+  width: 19.5rem;
 }
-@media (min-width: 900px) {
+@media (min-width: 600px) {
   .drawerMenu__copyright {
-    width: 14.0625vw;
+    width: 36.5625vh;
   }
 }
 .drawerMenu__mainLink, .drawerMenu__subLink {
+  position: relative;
   display: block;
-  width: 21rem;
+  width: 24rem;
   margin: 3rem auto;
   padding: 1.5rem;
   border: 1px solid var(--color--primary--active);
@@ -1597,19 +1593,35 @@ button, input, select, textarea {
   text-align: center;
   transition: all 0.25s ease;
 }
-@media (min-width: 900px) {
+@media (min-width: 600px) {
   .drawerMenu__mainLink, .drawerMenu__subLink {
-    width: 16.40625vw;
-    margin: 2.34375vw auto;
-    padding: 1.171875vw 0;
-    border-radius: 2.34375vw;
-    font-size: 0.78125vw;
+    width: 45vh;
+    margin: 5.625vh auto;
+    padding: 2.8125vh 0;
+    border-radius: 5.625vh;
+    font-size: 1.875vh;
   }
 }
 .drawerMenu__mainLink:hover, .drawerMenu__subLink:hover {
   border: 1px solid var(--color--lightest);
   background-color: var(--color--primary--active);
   color: var(--color--lightest);
+}
+.drawerMenu__mainLink::after, .drawerMenu__subLink::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: auto var(--spacing--medium);
+  border-top: 2px solid var(--color--primary--active);
+  border-right: 2px solid var(--color--primary--active);
+  transform: rotate(45deg);
+}
+.drawerMenu__mainLink:hover::after, .drawerMenu__subLink:hover::after {
+  border-color: var(--color--lightest);
 }
 .drawerMenu__subLink {
   border: 1px solid var(--color--lightest);
@@ -1620,6 +1632,13 @@ button, input, select, textarea {
   border: 1px solid var(--color--primary--active);
   background-color: var(--color--lightest);
   color: var(--color--primary--active);
+}
+.drawerMenu__subLink::after {
+  border-top: 2px solid var(--color--lightest);
+  border-right: 2px solid var(--color--lightest);
+}
+.drawerMenu__subLink:hover::after {
+  border-color: var(--color--primary--active);
 }
 .drawerMenu__primaryMenu {
   list-style: none;
@@ -1633,6 +1652,7 @@ button, input, select, textarea {
   text-transform: capitalize;
 }
 .drawerMenu__item a {
+  position: relative;
   display: block;
   padding: 0.375rem 0.75rem;
   border-block-end: 1px solid var(--color--lightest);
@@ -1645,16 +1665,32 @@ button, input, select, textarea {
   border-block-start: 1px solid var(--color--lightest);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 600px) {
   .drawerMenu__item a {
-    padding: 0.29296875vw 0.5859375vw;
-    font-size: 0.78125vw;
+    padding: 0.703125vh 1.40625vh;
+    font-size: 1.875vh;
   }
 }
 .drawerMenu__item a:hover {
   background-color: var(--color--primary);
   color: var(--color--darkest);
   fill: var(--color--darkest);
+}
+.drawerMenu__item a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: auto var(--spacing--small);
+  border-top: 2px solid var(--color--lightest);
+  border-right: 2px solid var(--color--lightest);
+  transform: rotate(45deg);
+}
+.drawerMenu__item a:hover::after {
+  border-color: var(--color--darkest);
 }
 
 .drawerMenuOverlay {
