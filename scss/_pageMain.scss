@@ -6,7 +6,7 @@
   padding: space("medium");
 
   h4 {
-    color: #ed899c;
+    color: color-active("primary");
     font-size: 1.33rem;
     text-align: center;
   }
@@ -28,9 +28,9 @@
     margin: space() auto;
     padding-block: space("x-small");
     padding-inline-end: space("medium");
-    border: 1px solid #ed899c;
+    border: 1px solid color-active("primary");
     border-radius: space("medium");
-    background-color: #ed899c;
+    background-color: color-active("primary");
     text-align: center;
     
     & > img {
@@ -96,7 +96,7 @@
   &__decrationText {
     &::before {
       content: "●";
-      color: #ed899c;
+      color: color-active("primary");
     }
   }
 

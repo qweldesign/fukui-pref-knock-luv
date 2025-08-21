@@ -498,7 +498,7 @@ button, input, select, textarea {
   padding: var(--spacing--medium);
 }
 .pageMain h4 {
-  color: #ed899c;
+  color: var(--color--primary--active);
   font-size: 1.33rem;
   text-align: center;
 }
@@ -517,9 +517,9 @@ button, input, select, textarea {
   margin: var(--spacing--small) auto;
   padding-block: var(--spacing--x-small);
   padding-inline-end: var(--spacing--medium);
-  border: 1px solid #ed899c;
+  border: 1px solid var(--color--primary--active);
   border-radius: var(--spacing--medium);
-  background-color: #ed899c;
+  background-color: var(--color--primary--active);
   text-align: center;
 }
 .pageMain__button > img {
@@ -572,7 +572,7 @@ button, input, select, textarea {
 }
 .pageMain__decrationText::before {
   content: "●";
-  color: #ed899c;
+  color: var(--color--primary--active);
 }
 .pageMain__figure {
   width: 18rem;
