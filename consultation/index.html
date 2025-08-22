@@ -62,8 +62,81 @@
             <li class="pageMain__decrationText">入力項目はすべて必須となっておりますのでお間違えのないようにご入力ください。</li>
             <li class="pageMain__decrationText">プライバシーポリシー をご確認の上、よろしければ送信ボタンを押してください。</li>
           </ul>
-          <form class="form">
-
+          <form class="form form--consultation">
+            <div class="form__component">
+              <label class="form__label" for="yourname">ニックネーム</label>
+              <input id="yourname" size="30" type="text" name="ニックネーム">
+            </div>
+            <div class="form__component">
+              <label class="form__label" for="yourage">ご相談者様の年齢</label>
+              <input id="yourage" size="2" type="number" name="ご相談者様の年齢"><span class="form__unit">歳</span>
+            </div>
+            <div class="form__component">
+              <label class="form__label" for="yourage">お子様(もしくはお孫様)の年齢</label>
+              <input id="yourage" size="2" type="number" name="お子様(もしくはお孫様)の年齢"><span class="form__unit">歳</span>
+            </div>
+            <div class="form__component">
+              <div class="form__label">お子様(もしくはお孫様)の性別</div>
+              <div class="form__radio">
+                <label class="radio">
+                  <input type="radio" name="性別" value="女性" checked>
+                  <span class="radio__mark"></span>
+                  女性
+                </label>
+                <label class="radio">
+                  <input type="radio" name="性別" value="男性">
+                  <span class="radio__mark"></span>
+                  男性
+                </label>
+                <label class="radio">
+                  <input type="radio" name="性別" value="その他・回答しない">
+                  <span class="radio__mark"></span>
+                  その他・回答しない
+                </label>
+              </div>
+            </div>
+            <div class="form__component">
+              <label for="youraddress">居住地</label>
+              <select id="youraddress" name="居住地">
+                <option value="選択してください" selected="selected">選択してください</option>
+                <option value="あわら市">あわら市</option>
+                <option value="池田町">池田町</option>
+                <option value="永平寺町">永平寺町</option>
+                <option value="越前市">越前市</option>
+                <option value="越前町">越前町</option>
+                <option value="おおい町">おおい町</option>
+                <option value="大野市">大野市</option>
+                <option value="小浜市">小浜市</option>
+                <option value="勝山市">勝山市</option>
+                <option value="坂井市">坂井市</option>
+                <option value="鯖江市">鯖江市</option>
+                <option value="高浜町">高浜町</option>
+                <option value="敦賀市">敦賀市</option>
+                <option value="福井市">福井市</option>
+                <option value="南越前町">南越前町</option>
+                <option value="美浜町">美浜町</option>
+                <option value="若狭町">若狭町</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+            <div class="form__component">
+              <label class="form__label" for="youremail">メールアドレス</label>
+              <input id="youremail" size="30" type="email" name="Email">
+            </div>
+            <div class="form__component">
+              <label class="form__label" for="yourcontent">ご相談内容</label>
+              <textarea id="yourcontent" name="ご相談内容" cols="30" rows="6"></textarea>
+            </div>
+            <div class="form__component">
+              <input id="privacy-policy-check" type="checkbox" name="プライバシーポリシーに同意する">
+              <label for="privacy-policy-check">プライバシーポリシーに同意する</label>
+              <p class="form__desc">
+                <a class="form__privacy-policy" href="../../privacy-policy/" target="_blank">プライバシーポリシーはこちら</a>
+              </p>
+            </div>
+            <div class="form__buttons">
+              <input type="image" src="../assets/formConfirm.png" alt="入力内容を確認する">
+            </div>
           </form>
           <h5>＜ご相談フォームに入力ができない方へ＞</h5>
           <p>お使いの携帯電話、スマートフォンによっては入力ができない場合がございます。

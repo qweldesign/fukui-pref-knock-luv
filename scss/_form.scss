@@ -6,6 +6,11 @@
   @include form();
   margin-block-end: space("large");
 
+  &--consultation {
+    padding: space("medium");
+    background-color: theme-color("lightest");
+  }
+
   &__title {
     font-weight: 700;
     text-align: center;
@@ -16,15 +21,20 @@
   }
 
   &__label {
+    display: block;
     margin-block: space();
     font-weight: 700;
   }
 
+  &__unit {
+    display: inline-block;
+    margin-inline-start: space();
+  }
+
   &__radio {
     display: flex;
-    justify-content: center;
-    gap: 3rem;
-    padding: 0 3rem;
+    justify-content: flex-start;
+    gap: 1.5rem;
 
     .radio {
       display: flex; // Override
@@ -34,6 +44,11 @@
   input[type="number"] {
     display: inline-block;
     width: 6rem;
+  }
+
+  input[type="checkbox"] {
+    display: inline-block;
+    transform: scale(1.5, 1.5);
   }
 
   &__desc {
@@ -63,6 +78,17 @@
   &__buttons {
     margin-block: space("medium");
     text-align: center;
+
+    [type="image"] {
+      width: auto;
+      height: 3rem;
+      margin-block: space("medium");
+
+      &:hover {
+        transform: translateY(-3px);
+        filter: drop-shadow(2px 4px 6px theme-color("dark"));
+      }
+    }
 
     [type="submit"], [type="button"], [type="reset"] {
       display: inline-block;

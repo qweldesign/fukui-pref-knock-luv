@@ -1756,9 +1756,6 @@ button, input, select, textarea {
 .form {
   margin-block-end: var(--spacing--large);
 }
-.form label {
-  display: block;
-}
 .form label span.required {
   color: #cc3333;
   font-size: var(--small-font-size);
@@ -1777,6 +1774,10 @@ button, input, select, textarea {
 .form textarea {
   resize: vertical;
 }
+.form--consultation {
+  padding: var(--spacing--medium);
+  background-color: var(--color--lightest);
+}
 .form__title {
   font-weight: 700;
   text-align: center;
@@ -1785,14 +1786,18 @@ button, input, select, textarea {
   margin-block: var(--spacing--medium);
 }
 .form__label {
+  display: block;
   margin-block: var(--spacing--small);
   font-weight: 700;
 }
+.form__unit {
+  display: inline-block;
+  margin-inline-start: var(--spacing--small);
+}
 .form__radio {
   display: flex;
-  justify-content: center;
-  gap: 3rem;
-  padding: 0 3rem;
+  justify-content: flex-start;
+  gap: 1.5rem;
 }
 .form__radio .radio {
   display: flex;
@@ -1800,6 +1805,10 @@ button, input, select, textarea {
 .form input[type=number] {
   display: inline-block;
   width: 6rem;
+}
+.form input[type=checkbox] {
+  display: inline-block;
+  transform: scale(1.5, 1.5);
 }
 .form__desc {
   padding: 0 var(--spacing--small) var(--spacing--small);
@@ -1824,6 +1833,15 @@ button, input, select, textarea {
 .form__buttons {
   margin-block: var(--spacing--medium);
   text-align: center;
+}
+.form__buttons [type=image] {
+  width: auto;
+  height: 3rem;
+  margin-block: var(--spacing--medium);
+}
+.form__buttons [type=image]:hover {
+  transform: translateY(-3px);
+  filter: drop-shadow(2px 4px 6px var(--color--dark));
 }
 .form__buttons [type=submit], .form__buttons [type=button], .form__buttons [type=reset] {
   display: inline-block;
