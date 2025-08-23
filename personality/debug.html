@@ -27,7 +27,7 @@
           <div class="personalityTest__main personalityTest__main--start" data-index="0">
             <button class="personalityTest__button" type="button">次へ</button> 
           </div>
-          <div class="personalityTest__main personalityTest__main--result personalityTest__main--collapse" data-index="9">
+          <div class="personalityTest__main personalityTest__main--result personalityTest__main--collapse" data-index="10">
             <p class="personalityTest__result"></p>
           </div>
           <a id="reset" class="personalityTest__reset" href="#">最初からやり直す</a>
@@ -91,6 +91,9 @@
       <small>福井県福井市板垣3丁目1510番地</small>
       <small>お問い合わせは TEL.0776-36-9300</small>
     </footer>
-    <script src="../init.js" type="module"></script>
+    <script type="module">
+      import PersonalityTest from '../js/personalityTest.js';
+      new PersonalityTest(true);
+    </script>
   </body>
 </html>

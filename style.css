@@ -796,7 +796,7 @@ button, input, select, textarea {
   text-align: center;
 }
 .personalityTest__main.personalityTest__main--result::after {
-  content: "解";
+  content: "結果";
 }
 .personalityTest__main--leave {
   animation: slide-out 0.5s ease;
