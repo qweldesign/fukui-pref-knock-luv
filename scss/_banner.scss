@@ -24,6 +24,10 @@
       width: calc(75% + 2.25rem);
       margin: 0 auto;
       padding-inline-end: 2.25rem;
+
+      & > img {
+        transition: all 0.5s ease;
+      }
       
       &:hover > img {
         filter: drop-shadow(2px 4px 6px theme-color("dark"));
@@ -40,10 +44,11 @@
         height: 2.25rem;
         margin: auto;
         background: url("./assets/button.svg") no-repeat 50% 50% / contain scroll;
+        transition: all 0.5s ease;
       }
 
       &:hover::after {
-        filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px theme-color("dark"));
+        filter: brightness(0.7) hue-rotate(-120deg) drop-shadow(2px 4px 6px theme-color("dark"));
       }
     }
 

@@ -83,6 +83,7 @@
       width: auto;
       height: 3rem;
       margin-block: space("medium");
+      transition: all 0.5s ease;
 
       &:hover {
         transform: translateY(-3px);

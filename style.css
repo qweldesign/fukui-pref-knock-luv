@@ -402,6 +402,9 @@ button, input, select, textarea {
 .siteMain__heading a {
   display: block;
 }
+.siteMain__heading a > img {
+  transition: all 0.5s ease;
+}
 .siteMain__heading a:hover > img {
   filter: drop-shadow(2px 4px 6px var(--color--dark));
 }
@@ -412,9 +415,10 @@ button, input, select, textarea {
   height: 3rem;
   margin: var(--spacing--small) auto;
   background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
+  transition: all 0.5s ease;
 }
 .siteMain__heading a:hover::after {
-  filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px var(--color--dark));
+  filter: brightness(0.7) hue-rotate(-120deg) drop-shadow(2px 4px 6px var(--color--dark));
 }
 .siteMain__heading--personalitySp {
   width: 18rem;
@@ -521,6 +525,7 @@ button, input, select, textarea {
   border-radius: var(--spacing--medium);
   background-color: var(--color--primary--active);
   text-align: center;
+  transition: all 0.5s ease;
 }
 .pageMain__button > img {
   width: auto;
@@ -561,14 +566,60 @@ button, input, select, textarea {
   background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
 }
 .pageMain__column {
-  margin: var(--spacing--medium);
+  width: 27rem;
+  height: 24rem;
+  margin: var(--spacing--medium) auto;
+  padding: var(--spacing--large) var(--spacing--medium);
 }
 .pageMain__column a {
   display: block;
+  transition: all 0.5s ease;
 }
 .pageMain__column a:hover {
   transform: translateY(-3px);
-  filter: drop-shadow(2px 4px 6px var(--color--dark));
+  filter: hue-rotate(-120deg) drop-shadow(2px 4px 6px var(--color--dark));
+}
+.pageMain__column--column1 {
+  background: url("./assets/column1Bg.png") no-repeat 50% 0%/contain scroll;
+}
+.pageMain__column--column1 img {
+  display: block;
+  width: 21rem;
+}
+.pageMain__column--column2 {
+  background: url("./assets/column2Bg.png") no-repeat 50% 0%/contain scroll;
+}
+.pageMain__column--column2 img {
+  display: block;
+  width: 21rem;
+}
+.pageMain__column--column3 {
+  background: url("./assets/column3Bg.png") no-repeat 50% 0%/contain scroll;
+}
+.pageMain__column--column3 img {
+  display: block;
+  width: 21rem;
+}
+.pageMain__column--moneyplan1 {
+  background: url("./assets/moneyplan1Bg.png") no-repeat 50% 0%/contain scroll;
+}
+.pageMain__column--moneyplan1 img {
+  display: block;
+  width: 24rem;
+}
+.pageMain__column--moneyplan2 {
+  background: url("./assets/moneyplan2Bg.png") no-repeat 50% 0%/contain scroll;
+}
+.pageMain__column--moneyplan2 img {
+  display: block;
+  width: 24rem;
+}
+.pageMain__column--moneyplan3 {
+  background: url("./assets/moneyplan3Bg.png") no-repeat 50% 0%/contain scroll;
+}
+.pageMain__column--moneyplan3 img {
+  display: block;
+  width: 24rem;
 }
 .pageMain__decrationText::before {
   content: "●";
@@ -594,6 +645,9 @@ button, input, select, textarea {
 .pageMain__largeBannerText {
   display: block;
 }
+.pageMain__largeBannerText > img {
+  transition: all 0.5s ease;
+}
 .pageMain__largeBannerText:hover > img {
   filter: drop-shadow(2px 4px 6px var(--color--dark));
 }
@@ -604,9 +658,10 @@ button, input, select, textarea {
   height: 3rem;
   margin: var(--spacing--small) auto;
   background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
+  transition: all 0.5s ease;
 }
 .pageMain__largeBannerText:hover::after {
-  filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px var(--color--dark));
+  filter: brightness(0.7) hue-rotate(-120deg) drop-shadow(2px 4px 6px var(--color--dark));
 }
 .pageMain__largeBannerText--matching {
   width: 21rem;
@@ -683,6 +738,7 @@ button, input, select, textarea {
   padding: var(--spacing--small);
   border-radius: var(--spacing--large);
   background-color: var(--color--lightest);
+  transition: all 0.5s ease;
 }
 .pageMenu__item:hover {
   transform: translateY(-3px);
@@ -1342,6 +1398,9 @@ button, input, select, textarea {
   margin: 0 auto;
   padding-inline-end: 2.25rem;
 }
+.banner__inner a > img {
+  transition: all 0.5s ease;
+}
 .banner__inner a:hover > img {
   filter: drop-shadow(2px 4px 6px var(--color--dark));
 }
@@ -1356,9 +1415,10 @@ button, input, select, textarea {
   height: 2.25rem;
   margin: auto;
   background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
+  transition: all 0.5s ease;
 }
 .banner__inner a:hover::after {
-  filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px var(--color--dark));
+  filter: brightness(0.7) hue-rotate(-120deg) drop-shadow(2px 4px 6px var(--color--dark));
 }
 .banner__inner p {
   margin-block: var(--spacing--x-small);
@@ -1372,6 +1432,9 @@ button, input, select, textarea {
 /**
  * Conponent - Button
  */
+.button img {
+  transition: all 0.5s ease;
+}
 .button:hover img {
   transform: translateY(-3px);
   filter: drop-shadow(2px 4px 6px var(--color--dark));
@@ -1838,6 +1901,7 @@ button, input, select, textarea {
   width: auto;
   height: 3rem;
   margin-block: var(--spacing--medium);
+  transition: all 0.5s ease;
 }
 .form__buttons [type=image]:hover {
   transform: translateY(-3px);

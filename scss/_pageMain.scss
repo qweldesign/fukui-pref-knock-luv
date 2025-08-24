@@ -32,6 +32,7 @@
     border-radius: space("medium");
     background-color: color-active("primary");
     text-align: center;
+    transition: all 0.5s ease;
     
     & > img {
       width: auto;
@@ -81,14 +82,72 @@
   }
 
   &__column {
-    margin: space("medium");
+    width: 27rem;
+    height: 24rem;
+    margin: space("medium") auto;
+    padding: space("large") space("medium");
 
     a {
       display: block;
+      transition: all 0.5s ease;
 
       &:hover {
         transform: translateY(-3px);
-        filter: drop-shadow(2px 4px 6px theme-color("dark"));
+        filter: hue-rotate(-120deg) drop-shadow(2px 4px 6px theme-color("dark"));
+      }
+    }
+
+    &--column1 {
+      background: url("./assets/column1Bg.png") no-repeat 50% 0% / contain scroll;
+
+      img {
+        display: block;
+        width: 21rem;
+      }
+    }
+
+    &--column2 {
+      background: url("./assets/column2Bg.png") no-repeat 50% 0% / contain scroll;
+
+      img {
+        display: block;
+        width: 21rem;
+      }
+    }
+
+    &--column3 {
+      background: url("./assets/column3Bg.png") no-repeat 50% 0% / contain scroll;
+
+      img {
+        display: block;
+        width: 21rem;
+      }
+    }
+
+    &--moneyplan1 {
+      background: url("./assets/moneyplan1Bg.png") no-repeat 50% 0% / contain scroll;
+
+      img {
+        display: block;
+        width: 24rem;
+      }
+    }
+
+    &--moneyplan2 {
+      background: url("./assets/moneyplan2Bg.png") no-repeat 50% 0% / contain scroll;
+
+      img {
+        display: block;
+        width: 24rem;
+      }
+    }
+
+    &--moneyplan3 {
+      background: url("./assets/moneyplan3Bg.png") no-repeat 50% 0% / contain scroll;
+
+      img {
+        display: block;
+        width: 24rem;
       }
     }
   }
@@ -124,6 +183,10 @@
   &__largeBannerText {
     display: block;
 
+    & > img {
+      transition: all 0.5s ease;
+    }
+
     &:hover > img {
       filter: drop-shadow(2px 4px 6px theme-color("dark"));
     }
@@ -135,10 +198,11 @@
       height: 3rem;
       margin: space() auto;
       background: url("./assets/button.svg") no-repeat 50% 50% / contain scroll;
+      transition: all 0.5s ease;
     }
 
     &:hover::after {
-      filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px theme-color("dark"));
+      filter: brightness(0.7) hue-rotate(-120deg) drop-shadow(2px 4px 6px theme-color("dark"));
     }
 
     &--matching {

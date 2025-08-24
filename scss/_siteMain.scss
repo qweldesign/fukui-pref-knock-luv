@@ -141,6 +141,10 @@
     a {
       display: block;
 
+      & > img {
+        transition: all 0.5s ease;
+      }
+
       &:hover > img {
         filter: drop-shadow(2px 4px 6px theme-color("dark"));
       }
@@ -152,10 +156,11 @@
         height: 3rem;
         margin: space() auto;
         background: url("./assets/button.svg") no-repeat 50% 50% / contain scroll;
+        transition: all 0.5s ease;
       }
 
       &:hover::after {
-        filter: brightness(0.7) hue-rotate(240deg) drop-shadow(2px 4px 6px theme-color("dark"));
+        filter: brightness(0.7) hue-rotate(-120deg) drop-shadow(2px 4px 6px theme-color("dark"));
       }
     }
 
