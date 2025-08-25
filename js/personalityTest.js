@@ -196,10 +196,18 @@ export default class PersonalityTest {
   }
 
   countParams(arr) {
-    return arr.reduce((acc, cur) => {
-      acc[cur] = (acc[cur] || 0) + 1;
-      return acc;
-    }, {});
+    const counts = {
+      E: 0,
+      I: 0,
+      F: 0,
+      T: 0,
+      A: 0,
+      P: 0
+    }
+    arr.forEach((char) => {
+      counts[char]++;
+    })
+    return counts;
   }
 
   getType(counts) {
