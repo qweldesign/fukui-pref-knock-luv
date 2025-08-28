@@ -471,6 +471,9 @@ button, input, select, textarea {
 .pageHeader--matching {
   background: url("./assets/matchingHeaderBg.png") no-repeat 50% 100%/cover scroll;
 }
+.pageHeader--matching .pageHeader__desc {
+  text-shadow: 1px 1px var(--color--lightest);
+}
 .pageHeader--column {
   padding-block-end: 18rem;
   background: url("./assets/pageFg.png") no-repeat 50% 100%/contain scroll, #59ada9;
@@ -730,6 +733,9 @@ button, input, select, textarea {
   padding-inline-start: 0;
   margin: 0 0 var(--spacing--medium);
   padding: 13.5rem 0 3.75rem;
+}
+.pageMenu--matching {
+  padding-block-start: 4.5rem;
 }
 .pageMenu__item {
   position: relative;
@@ -1113,12 +1119,59 @@ button, input, select, textarea {
   aspect-ratio: 2;
   width: 27rem;
   margin: auto;
+  padding-block: 2.25rem;
 }
-.personalityResult__banner--blue {
-  background: url("./assets/bannerBg_blue.png") no-repeat 50% 50%/contain scroll;
+.personalityResult__banner--self {
+  background: url("./assets/selfBannerOuter.png") no-repeat 50% 50%/contain scroll;
 }
-.personalityResult__banner--green {
-  background: url("./assets/bannerBg_green.png") no-repeat 50% 50%/contain scroll;
+.personalityResult__banner--self > a {
+  width: 21rem;
+}
+.personalityResult__banner--matching {
+  background: url("./assets/matchingBannerOuter.png") no-repeat 50% 50%/contain scroll;
+}
+.personalityResult__banner--matching > a {
+  width: 21rem;
+}
+.personalityResult__banner--column {
+  background: url("./assets/columnBannerOuter.png") no-repeat 50% 50%/contain scroll;
+}
+.personalityResult__banner--column > a {
+  width: 15rem;
+}
+.personalityResult__banner--moneyplan {
+  background: url("./assets/moneyplanBannerOuter.png") no-repeat 50% 50%/contain scroll;
+}
+.personalityResult__banner--moneyplan > a {
+  width: 18rem;
+}
+.personalityResult__banner--support {
+  background: url("./assets/supportBannerOuter.png") no-repeat 50% 50%/contain scroll;
+}
+.personalityResult__banner--support > a {
+  width: 18rem;
+}
+.personalityResult__banner > a {
+  display: block;
+  margin: 0 auto;
+}
+.personalityResult__banner > a > img {
+  transition: all 0.5s ease;
+}
+.personalityResult__banner > a:hover > img {
+  filter: drop-shadow(2px 4px 6px var(--color--dark));
+}
+.personalityResult__banner > a::after {
+  content: "";
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: var(--spacing--small) auto;
+  background: url("./assets/button.svg") no-repeat 50% 50%/contain scroll;
+  transition: all 0.5s ease;
+}
+.personalityResult__banner > a:hover::after {
+  filter: brightness(0.7) hue-rotate(-120deg) drop-shadow(2px 4px 6px var(--color--dark));
 }
 .personalityResult__clipImage {
   margin: 0 var(--spacing--medium);
@@ -1613,6 +1666,11 @@ button, input, select, textarea {
   background-color: var(--color--primary--active);
   text-align: center;
   transition: width 0.5s ease;
+}
+@media (min-width: 600px) {
+  .drawerMenu {
+    width: 78.75vh;
+  }
 }
 .drawerMenu:not(.drawerMenu--show) {
   width: 0;

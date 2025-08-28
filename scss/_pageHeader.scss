@@ -20,6 +20,10 @@
 
   &--matching {
     background: url("./assets/matchingHeaderBg.png") no-repeat 50% 100% / cover scroll;
+
+    .pageHeader__desc {
+      text-shadow: 1px 1px theme-color("lightest");
+    }
   }
 
   &--column { // moneyplanと共用

@@ -8,6 +8,10 @@
   margin: 0 0 space("medium");
   padding: 13.5rem 0 3.75rem;
 
+  &--matching {
+    padding-block-start: 4.5rem;
+  }
+
   &__item {
     position: relative;
     width: 27rem;

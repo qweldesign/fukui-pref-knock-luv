@@ -84,9 +84,9 @@ $drawer-root-size:           1.875vh;
   text-align: center;
   transition: width 0.5s ease;
 
-  //@media (min-width: breakpoint("sm")) {
-  //  width: $drawer-root-size * 36;
-  //}
+  @media (min-width: breakpoint("sm")) {
+    width: $drawer-root-size * 42;
+  }
   
   &:not(.drawerMenu--show) {
     width: 0;

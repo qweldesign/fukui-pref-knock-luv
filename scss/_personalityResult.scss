@@ -134,13 +134,73 @@
     aspect-ratio: 2;
     width: 27rem;
     margin: auto;
+    padding-block: 2.25rem;
 
-    &--blue {
-      background: url("./assets/bannerBg_blue.png") no-repeat 50% 50% / contain scroll;
+    &--self {
+      background: url("./assets/selfBannerOuter.png") no-repeat 50% 50% / contain scroll;
+
+      > a {
+        width: 21rem;
+      }
     }
 
-    &--green {
-      background: url("./assets/bannerBg_green.png") no-repeat 50% 50% / contain scroll;
+    &--matching {
+      background: url("./assets/matchingBannerOuter.png") no-repeat 50% 50% / contain scroll;
+
+      > a {
+        width: 21rem;
+      }
+    }
+
+    &--column {
+      background: url("./assets/columnBannerOuter.png") no-repeat 50% 50% / contain scroll;
+
+      > a {
+        width: 15rem;
+      }
+    }
+
+    &--moneyplan {
+      background: url("./assets/moneyplanBannerOuter.png") no-repeat 50% 50% / contain scroll;
+
+      > a {
+        width: 18rem;
+      }
+    }
+
+    &--support {
+      background: url("./assets/supportBannerOuter.png") no-repeat 50% 50% / contain scroll;
+
+      > a {
+        width: 18rem;
+      }
+    }
+
+    & > a {
+      display: block;
+      margin: 0 auto;
+
+      & > img {
+        transition: all 0.5s ease;
+      }
+
+      &:hover > img {
+        filter: drop-shadow(2px 4px 6px theme-color("dark"));
+      }
+      
+      &::after {
+        content: "";
+        display: block;
+        width: 2.25rem;
+        height: 2.25rem;
+        margin: space() auto;
+        background: url("./assets/button.svg") no-repeat 50% 50% / contain scroll;
+        transition: all 0.5s ease;
+      }
+
+      &:hover::after {
+        filter: brightness(0.7) hue-rotate(-120deg) drop-shadow(2px 4px 6px theme-color("dark"));
+      }
     }
   }
 
