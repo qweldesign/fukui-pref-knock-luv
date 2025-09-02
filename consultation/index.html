@@ -62,18 +62,18 @@
             <li class="pageMain__decrationText">入力項目はすべて必須となっておりますのでお間違えのないようにご入力ください。</li>
             <li class="pageMain__decrationText">プライバシーポリシー をご確認の上、よろしければ送信ボタンを押してください。</li>
           </ul>
-          <form class="form form--consultation">
+          <form class="form form--consultation" method="post" action="./mail.php">
             <div class="form__component">
               <label class="form__label" for="yourname">ニックネーム</label>
               <input id="yourname" size="30" type="text" name="ニックネーム">
             </div>
             <div class="form__component">
               <label class="form__label" for="yourage">ご相談者様の年齢</label>
-              <input id="yourage" size="2" type="number" name="ご相談者様の年齢"><span class="form__unit">歳</span>
+              <input id="yourage" type="number" name="ご相談者様の年齢" min="18" max="99" oninput="javascript: this.value = this.value.slice(0, 2);"><span class="form__unit">歳</span>
             </div>
             <div class="form__component">
               <label class="form__label" for="yourage">お子様(もしくはお孫様)の年齢</label>
-              <input id="yourage" size="2" type="number" name="お子様(もしくはお孫様)の年齢"><span class="form__unit">歳</span>
+              <input id="yourage" type="number" name="お子様(もしくはお孫様)の年齢" min="18" mx="99" oninput="javascript: this.value = this.value.slice(0, 2);"><span class="form__unit">歳</span>
             </div>
             <div class="form__component">
               <div class="form__label">お子様(もしくはお孫様)の性別</div>
@@ -98,7 +98,7 @@
             <div class="form__component">
               <label for="youraddress">居住地</label>
               <select id="youraddress" name="居住地">
-                <option value="選択してください" selected="selected">選択してください</option>
+                <option value="" selected="selected">選択してください</option>
                 <option value="あわら市">あわら市</option>
                 <option value="池田町">池田町</option>
                 <option value="永平寺町">永平寺町</option>
@@ -128,14 +128,14 @@
               <textarea id="yourcontent" name="ご相談内容" cols="30" rows="6"></textarea>
             </div>
             <div class="form__component">
-              <input id="privacy-policy-check" type="checkbox" name="プライバシーポリシーに同意する">
+              <input id="privacy-policy-check" type="checkbox" name="プライバシーポリシー">
               <label for="privacy-policy-check">プライバシーポリシーに同意する</label>
               <p class="form__desc">
                 <a class="form__privacy-policy" href="../../privacy-policy/" target="_blank">プライバシーポリシーはこちら</a>
               </p>
             </div>
             <div class="form__buttons">
-              <input type="image" src="../assets/formConfirm.png" alt="入力内容を確認する">
+              <button type="submit"><img src="../../assets/formConfirm.png" alt="入力内容を確認する"></button>
             </div>
           </form>
           <h5>＜ご相談フォームに入力ができない方へ＞</h5>

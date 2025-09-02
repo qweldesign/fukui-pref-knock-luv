@@ -1899,6 +1899,24 @@ button, input, select, textarea {
   padding: var(--spacing--medium);
   background-color: var(--color--lightest);
 }
+.form__table {
+  width: 100%;
+}
+@media (max-width: 599.9px) {
+  .form__table, .form__table thead, .form__table tbody, .form__table tr, .form__table th, .form__table td {
+    display: block;
+  }
+}
+.form__table thead, .form__table tbody {
+  width: 100%;
+}
+.form__table thead {
+  border: 0;
+}
+.form__table th, .form__table td {
+  padding: var(--spacing--small);
+  border: 0;
+}
 .form__title {
   font-weight: 700;
   text-align: center;
@@ -1955,50 +1973,27 @@ button, input, select, textarea {
   margin-block: var(--spacing--medium);
   text-align: center;
 }
-.form__buttons [type=image] {
+.form__buttons button {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+.form__buttons img {
   width: auto;
   height: 3rem;
   margin-block: var(--spacing--medium);
   transition: all 0.5s ease;
+  cursor: pointer;
 }
-.form__buttons [type=image]:hover {
+.form__buttons img:hover {
   transform: translateY(-3px);
   filter: drop-shadow(2px 4px 6px var(--color--dark));
 }
 .form__buttons [type=submit], .form__buttons [type=button], .form__buttons [type=reset] {
   display: inline-block;
-  width: 14rem;
-  height: 3.5rem;
-  line-height: 3.5rem;
+  width: auto;
+  height: 3rem;
   margin-inline: auto;
-  border: 0;
-  border-radius: var(--spacing--large);
-  text-align: center;
-  text-decoration: none;
-  word-break: break-word;
-  outline: 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-.form__buttons [type=submit]:hover, .form__buttons [type=button]:hover, .form__buttons [type=reset]:hover {
-  text-decoration: none;
-  transform: translateY(-3px);
-  box-shadow: 2px 4px 6px var(--color--darkest);
-}
-.form__buttons [type=submit] {
-  background-color: var(--color--primary--active);
-  color: var(--color--lightest);
-}
-.form__buttons [type=button] {
-  background-color: var(--color--secondary);
-  color: var(--color--darkest);
-}
-.form__buttons [type=reset] {
-  background-color: var(--color--tertiary);
-  color: var(--color--lightest);
 }
 
 /**

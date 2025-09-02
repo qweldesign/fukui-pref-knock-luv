@@ -21,7 +21,7 @@
             <br>&lt;利用上の注意&gt;&lt;使用条件&gt;をよく読んだ上で下記のフォームよりお申込みください。</p>
         </header>
         <main class="pageMain">
-          <form class="form">
+          <form class="form" method="post" action="./mail.php">
             <h2 class="form__title">申請フォーム</h2>
             <div class="form__component">
               <label class="form__label" for="youremail">メールアドレス</label>
@@ -45,7 +45,7 @@
             <div class="form__component">
               <label class="form__label" for="yourage">年齢</label>
               <select id="yourage" name="年齢">
-                <option value="選択してください" selected="selected">選択してください</option>
+                <option value="" selected="selected">選択してください</option>
                 <option value="18歳">18歳</option>
                 <option value="19歳">19歳</option>
                 <option value="20歳">20歳</option>
@@ -63,7 +63,7 @@
             <div class="form__component">
               <label for="youraddress">居住地</label>
               <select id="youraddress" name="居住地">
-                <option value="選択してください" selected="selected">選択してください</option>
+                <option value="" selected="selected">選択してください</option>
                 <option value="あわら市">あわら市</option>
                 <option value="池田町">池田町</option>
                 <option value="永平寺町">永平寺町</option>
@@ -85,7 +85,7 @@
               </select>
             </div>
             <div class="form__component">
-              <input id="yourcheck" type="checkbox" name="私は福井県在住、または在勤です。">
+              <input id="yourcheck" type="checkbox" name="福井県在住または在勤">
               <label for="yourcheck">私は福井県在住、または在勤です。</label>
             </div>
             <div class="form__label">利用上の注意</div>
@@ -100,7 +100,7 @@
             <p class="form__desc">・18歳以上、30歳未満の方
               <br>・福井県内に在住もしくは在勤の方</p>
             <div class="form__buttons">
-              <input type="image" src="../../assets/formSubmit.png" alt="送信する">
+              <button type="submit"><img src="../../assets/formConfirm.png" alt="入力内容を確認する"></button>
             </div>
             <p class="form__desc util--text_center">※送信ボタンを押すことで「利用上の注意」や
               <br>「プライバシーポリシー」に同意したとみなします。</p>
