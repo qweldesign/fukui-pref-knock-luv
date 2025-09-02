@@ -488,10 +488,10 @@ button, input, select, textarea {
   text-align: center;
 }
 .pageHeader__desc {
-  width: 27rem;
+  width: 24rem;
   margin: var(--spacing--small) auto;
   font-size: 0.875rem;
-  text-align: center;
+  text-align: justify;
 }
 .pageHeader__figure {
   width: 21rem;
