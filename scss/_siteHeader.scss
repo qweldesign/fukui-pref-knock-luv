@@ -45,4 +45,46 @@
       background: linear-gradient(theme-color("primary") 0%, theme-color("primary") 86%, theme-color("secondary") 86.1%, theme-color("secondary") 100%);
     }
   }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__slider {
+    position: absolute;
+    top: 5.25rem;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+
+    @media (min-width: breakpoint("md")) {
+      display: none;
+    }
+  }
+
+  &__sliderInner {
+    @include list-unstyled();
+    display: flex;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+  }
+
+  &__sliderItem {
+    flex: 0 0 auto;
+    width: 7.5rem;
+    height: 13.5rem;
+    margin: 0 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
