@@ -775,7 +775,7 @@ button, input, select, textarea {
   padding: 13.5rem 0 3.75rem;
 }
 .pageMenu--matching {
-  padding-block-start: 4.5rem;
+  padding-block-start: 6rem;
 }
 .pageMenu__item {
   position: relative;
