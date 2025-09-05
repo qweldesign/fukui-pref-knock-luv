@@ -524,7 +524,7 @@ button, input, select, textarea {
 }
 .pageHeader__title--notepad {
   width: 21rem;
-  margin: var(--spacing--large) 3rem;
+  margin: var(--spacing--large) 3rem 0;
 }
 .pageHeader__title:not(:has(img)) {
   margin-block-start: var(--spacing--large);
@@ -571,6 +571,7 @@ button, input, select, textarea {
   filter: hue-rotate(-120deg) drop-shadow(2px 4px 6px var(--color--dark));
 }
 .pageMain__column--column1 {
+  height: 27rem;
   background: url("./assets/column1Bg.png") no-repeat 50% 0%/contain scroll;
 }
 .pageMain__column--column1 img {
@@ -646,9 +647,52 @@ button, input, select, textarea {
   width: 21rem;
   margin: 0 auto;
 }
-.pageMain__heading--normal {
+.pageMain__heading {
   margin: var(--spacing--large) 0 var(--spacing--small);
+  font-weight: 700;
   font-size: 1.17rem;
+}
+.pageMain__subHeading {
+  margin: var(--spacing--medium) 0 var(--spacing--small);
+  padding-inline-start: 0.375rem;
+  border-inline-start: 0.375rem solid var(--color--primary--active);
+  font-weight: 700;
+  font-size: 1rem;
+}
+.pageMain__summaryWrap {
+  position: relative;
+  margin-block: var(--spacing--medium);
+  padding: var(--spacing--medium);
+  background: url("./assets/summaryWrap.png") no-repeat 50% 50%/contain scroll;
+}
+.pageMain__summaryLabel {
+  position: absolute;
+  top: -1.5rem;
+  left: -0.75rem;
+  width: 6.75rem;
+}
+.pageMain__summaryList {
+  list-style: none;
+  padding: 0 var(--spacing--medium) 0 var(--spacing--x-large);
+}
+.pageMain__summaryItem {
+  position: relative;
+  line-height: 1.44;
+}
+.pageMain__summaryItem::before {
+  content: "";
+  position: absolute;
+  top: 0.3rem;
+  left: -1.5rem;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background: url("./assets/checkbox.png") no-repeat 50% 50%/contain scroll;
+}
+.pageMain__summaryItem a {
+  font-weight: 700;
+  -webkit-text-decoration: underline var(--color--primary) 0.15rem;
+          text-decoration: underline var(--color--primary) 0.15rem;
 }
 .pageMain__lead {
   position: relative;
@@ -714,9 +758,15 @@ button, input, select, textarea {
   content: "●";
   color: var(--color--primary--active);
 }
+.pageMain__marker {
+  background-color: #f3f5c6;
+}
 .pageMain__figure {
   width: 18rem;
   margin: var(--spacing--medium) auto;
+}
+.pageMain__graph {
+  padding: var(--spacing--x-small);
 }
 .pageMain__image {
   margin: var(--spacing--medium) 0;

@@ -37,7 +37,7 @@
 
     &--notepad {
       width: 21rem;
-      margin: space("large") 3rem;
+      margin: space("large") 3rem 0;
     }
 
     &:not(:has(img)) {

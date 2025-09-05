@@ -34,7 +34,7 @@
     }
 
     &--column1 {
-      //height: 27rem; // 他より縦に伸びる
+      height: 27rem; // 他より縦に伸びる
       background: url("./assets/column1Bg.png") no-repeat 50% 0% / contain scroll;
 
       img {
@@ -135,10 +135,57 @@
 
   // 各種見出し
   &__heading {
-    // h3: privacy-policy各見出し
-    &--normal {
-      margin: space("large") 0 space();
-      font-size: 1.17rem;
+    margin: space("large") 0 space();
+    font-weight: 700;
+    font-size: 1.17rem;
+  }
+
+  &__subHeading {
+    margin: space("medium") 0 space();
+    padding-inline-start: 0.375rem;
+    border-inline-start: 0.375rem solid color-active("primary");
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  // Summary
+  &__summaryWrap {
+    position: relative;
+    margin-block: space("medium");
+    padding: space("medium");
+    background: url("./assets/summaryWrap.png") no-repeat 50% 50% / contain scroll;
+  }
+
+  &__summaryLabel {
+    position: absolute;
+    top: -1.5rem;
+    left: -0.75rem;
+    width: 6.75rem;
+  }
+
+  &__summaryList {
+    list-style: none;
+    padding: 0 space("medium") 0 space("x-large");
+  }
+
+  &__summaryItem {
+    position: relative;
+    line-height: 1.44;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.3rem;
+      left: -1.5rem;
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      background: url("./assets/checkbox.png") no-repeat 50% 50% / contain scroll;
+    }
+
+    a {
+      font-weight: 700;
+      text-decoration: underline theme-color("primary") 0.15rem;
     }
   }
 
@@ -225,10 +272,20 @@
     }
   }
 
+  // マーカー
+  &__marker {
+    background-color: #f3f5c6;
+  }
+
   // 小イラスト consultation > イラスト
   &__figure {
     width: 18rem;
     margin: space("medium") auto;
+  }
+
+  // グラフ column > 下層 > グラフ
+  &__graph {
+    padding: space("x-small");
   }
 
   // 画像: support > 新婚応援!
