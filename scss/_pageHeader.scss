@@ -35,6 +35,11 @@
     width: 24rem;
     margin: 0 auto;
 
+    &--notepad {
+      width: 21rem;
+      margin: space("large") 3rem;
+    }
+
     &:not(:has(img)) {
       margin-block-start: space("large");
       margin-block-end: space("medium");

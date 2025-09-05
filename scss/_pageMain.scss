@@ -5,22 +5,238 @@
 .pageMain {
   padding: space("medium");
 
-  h4 {
-    color: color-active("primary");
-    font-size: 1.33rem;
-    text-align: center;
-  }
-
   p {
     text-align: justify;
   }
 
-  &--column {
+  // column, moneyplan 各トップ
+  &--columns {
     margin-block-start: -3rem;
     padding-block-start: 0;
     padding-block-end: 3rem;
   }
 
+  // column, moneyplan 各トップページに配置される下層リンク
+  &__column {
+    width: 27rem;
+    height: 24rem;
+    margin: space("medium") auto;
+    padding: space("large") space("medium");
+
+    a {
+      display: block;
+      transition: all 0.5s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+        filter: hue-rotate(-120deg) drop-shadow(2px 4px 6px theme-color("dark"));
+      }
+    }
+
+    &--column1 {
+      //height: 27rem; // 他より縦に伸びる
+      background: url("./assets/column1Bg.png") no-repeat 50% 0% / contain scroll;
+
+      img {
+        display: block;
+        width: 21rem;
+      }
+    }
+
+    &--column2 {
+      background: url("./assets/column2Bg.png") no-repeat 50% 0% / contain scroll;
+
+      img {
+        display: block;
+        width: 21rem;
+      }
+    }
+
+    &--column3 {
+      background: url("./assets/column3Bg.png") no-repeat 50% 0% / contain scroll;
+
+      img {
+        display: block;
+        width: 21rem;
+      }
+    }
+
+    &--moneyplan1 {
+      background: url("./assets/moneyplan1Bg.png") no-repeat 50% 0% / contain scroll;
+
+      img {
+        display: block;
+        width: 24rem;
+      }
+    }
+
+    &--moneyplan2 {
+      background: url("./assets/moneyplan2Bg.png") no-repeat 50% 0% / contain scroll;
+
+      img {
+        display: block;
+        width: 24rem;
+      }
+    }
+
+    &--moneyplan3 {
+      background: url("./assets/moneyplan3Bg.png") no-repeat 50% 0% / contain scroll;
+
+      img {
+        display: block;
+        width: 24rem;
+      }
+    }
+  }
+
+  // column, moneyplan 各トップページに配置される部屋バナー
+  &__largeBanner {
+    margin: -1.5rem;
+
+    &--matching {
+      height: 20rem;
+      padding: 4.5rem 16.7% 0 0;
+      background: url("./assets/matchingBg_sp.svg") no-repeat 0% 100%;
+      background-size: 91.6%;
+    }
+  }
+
+  // 部屋バナー内リンクテキスト
+  &__largeBannerText {
+    display: block;
+
+    & > img {
+      transition: all 0.5s ease;
+    }
+
+    &:hover > img {
+      filter: drop-shadow(2px 4px 6px theme-color("dark"));
+    }
+    
+    &::after {
+      content: "";
+      display: block;
+      width: 3rem;
+      height: 3rem;
+      margin: space() auto;
+      background: url("./assets/button.svg") no-repeat 50% 50% / contain scroll;
+      transition: all 0.5s ease;
+    }
+
+    &:hover::after {
+      filter: brightness(0.7) hue-rotate(-120deg) drop-shadow(2px 4px 6px theme-color("dark"));
+    }
+
+    &--matching {
+      width: 21rem;
+      margin: 0 auto;
+    }
+  }
+
+  // 各種見出し
+  &__heading {
+    // h3: privacy-policy各見出し
+    &--normal {
+      margin: space("large") 0 space();
+      font-size: 1.17rem;
+    }
+  }
+
+  // consultation, support 各ページリード
+  &__lead {
+    position: relative;
+    margin: space("large") 0 space("medium");
+    border: 2px solid theme-color("darkest");
+    border-radius: space("large");
+    background-color: theme-color("lightest");
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      display: block;
+      width: 0;
+      height: 1.5rem;
+      margin: 0 auto;
+      border: 1px solid theme-color("darkest");
+    }
+
+    h3, p {
+      margin-block: space();
+      font-weight: 700;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 1.17rem;
+    }
+  }
+
+  // 中央揃えの見出し: support > 登録のメリット
+  &__headline {
+    color: color-active("primary");
+    font-size: 1.33rem;
+    text-align: center;
+  }
+
+  // 画像の見出し (中央揃え): sonsultation, support > 無料個別相談
+  &__imgHeading {
+    margin-inline: auto;
+
+    &--qa {
+      width: 18rem;
+    }
+
+    &--free {
+      width: 21rem;
+      margin-block-start: space("large");
+      text-align: center;
+
+      & > img {
+        display: inline-block;
+        width: 15rem;
+      }
+
+      & span {
+        display: inline-block;
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // リスト (文字小さめ)
+  &__list {
+    @include list-unstyled();
+
+    & > li {
+      margin-block: space("x-small");
+      font-size: 0.875rem;
+    }
+  }
+
+  // 赤ポチ
+  &__decrationText {
+    &::before {
+      content: "●";
+      color: color-active("primary");
+    }
+  }
+
+  // 小イラスト consultation > イラスト
+  &__figure {
+    width: 18rem;
+    margin: space("medium") auto;
+  }
+
+  // 画像: support > 新婚応援!
+  &__image {
+    margin: space("medium") 0;
+  }
+
+  // consultation, privacy-policy, support 各ページに配置されるボタン
   &__button {
     position: relative;
     display: block;
@@ -78,205 +294,6 @@
       height: 1.75rem;
       margin: auto space();
       background: url("./assets/button.svg") no-repeat 50% 50% / contain scroll;
-    }
-  }
-
-  &__column {
-    width: 27rem;
-    height: 24rem;
-    margin: space("medium") auto;
-    padding: space("large") space("medium");
-
-    a {
-      display: block;
-      transition: all 0.5s ease;
-
-      &:hover {
-        transform: translateY(-3px);
-        filter: hue-rotate(-120deg) drop-shadow(2px 4px 6px theme-color("dark"));
-      }
-    }
-
-    &--column1 {
-      background: url("./assets/column1Bg.png") no-repeat 50% 0% / contain scroll;
-
-      img {
-        display: block;
-        width: 21rem;
-      }
-    }
-
-    &--column2 {
-      background: url("./assets/column2Bg.png") no-repeat 50% 0% / contain scroll;
-
-      img {
-        display: block;
-        width: 21rem;
-      }
-    }
-
-    &--column3 {
-      background: url("./assets/column3Bg.png") no-repeat 50% 0% / contain scroll;
-
-      img {
-        display: block;
-        width: 21rem;
-      }
-    }
-
-    &--moneyplan1 {
-      background: url("./assets/moneyplan1Bg.png") no-repeat 50% 0% / contain scroll;
-
-      img {
-        display: block;
-        width: 24rem;
-      }
-    }
-
-    &--moneyplan2 {
-      background: url("./assets/moneyplan2Bg.png") no-repeat 50% 0% / contain scroll;
-
-      img {
-        display: block;
-        width: 24rem;
-      }
-    }
-
-    &--moneyplan3 {
-      background: url("./assets/moneyplan3Bg.png") no-repeat 50% 0% / contain scroll;
-
-      img {
-        display: block;
-        width: 24rem;
-      }
-    }
-  }
-
-  &__decrationText {
-    &::before {
-      content: "●";
-      color: color-active("primary");
-    }
-  }
-
-  &__figure {
-    width: 18rem;
-    margin: space("medium") auto;
-  }
-
-  &__heading {
-    margin: space("large") 0 space();
-    font-size: 1.17rem;
-  }
-
-  &__largeBanner {
-    margin: -1.5rem;
-
-    &--matching {
-      height: 20rem;
-      padding: 4.5rem 16.7% 0 0;
-      background: url("./assets/matchingBg_sp.svg") no-repeat 0% 100%;
-      background-size: 91.6%;
-    }
-  }
-
-  &__largeBannerText {
-    display: block;
-
-    & > img {
-      transition: all 0.5s ease;
-    }
-
-    &:hover > img {
-      filter: drop-shadow(2px 4px 6px theme-color("dark"));
-    }
-    
-    &::after {
-      content: "";
-      display: block;
-      width: 3rem;
-      height: 3rem;
-      margin: space() auto;
-      background: url("./assets/button.svg") no-repeat 50% 50% / contain scroll;
-      transition: all 0.5s ease;
-    }
-
-    &:hover::after {
-      filter: brightness(0.7) hue-rotate(-120deg) drop-shadow(2px 4px 6px theme-color("dark"));
-    }
-
-    &--matching {
-      width: 21rem;
-      margin: 0 auto;
-    }
-  }
-
-  &__lead {
-    position: relative;
-    margin: space("large") 0 space("medium");
-    border: 2px solid theme-color("darkest");
-    border-radius: space("large");
-    background-color: theme-color("lightest");
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      display: block;
-      width: 0;
-      height: 1.5rem;
-      margin: 0 auto;
-      border: 1px solid theme-color("darkest");
-    }
-
-    h3, p {
-      margin-block: space();
-      font-weight: 700;
-      text-align: center;
-    }
-
-    h3 {
-      font-size: 1.17rem;
-    }
-  }
-
-  &__list {
-    @include list-unstyled();
-
-    & > li {
-      margin-block: space("x-small");
-      font-size: 0.875rem;
-    }
-  }
-
-  &__image {
-    margin: space("medium") 0;
-  }
-
-  &__subHeading {
-    margin-inline: auto;
-
-    &--qa {
-      width: 18rem;
-    }
-
-    &--free {
-      width: 21rem;
-      margin-block-start: space("large");
-      text-align: center;
-
-      & > img {
-        display: inline-block;
-        width: 15rem;
-      }
-
-      & span {
-        display: inline-block;
-        width: 100%;
-        font-size: 1rem;
-      }
     }
   }
 }
