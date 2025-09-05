@@ -712,7 +712,7 @@ button, input, select, textarea {
 }
 .pageMain__lead {
   position: relative;
-  margin: var(--spacing--medium) 0;
+  margin: var(--spacing--large) 0 var(--spacing--medium);
   border: 2px solid var(--color--darkest);
   border-radius: var(--spacing--large);
   background-color: var(--color--lightest);
@@ -741,6 +741,10 @@ button, input, select, textarea {
   list-style: none;
   padding-inline-start: 0;
 }
+.pageMain__list > li {
+  margin-block: var(--spacing--x-small);
+  font-size: 0.875rem;
+}
 .pageMain__image {
   margin: var(--spacing--medium) 0;
 }
@@ -752,6 +756,7 @@ button, input, select, textarea {
 }
 .pageMain__subHeading--free {
   width: 21rem;
+  margin-block-start: var(--spacing--large);
   text-align: center;
 }
 .pageMain__subHeading--free > img {

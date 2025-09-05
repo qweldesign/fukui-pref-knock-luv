@@ -213,7 +213,7 @@
 
   &__lead {
     position: relative;
-    margin: space("medium") 0;
+    margin: space("large") 0 space("medium");
     border: 2px solid theme-color("darkest");
     border-radius: space("large");
     background-color: theme-color("lightest");
@@ -244,6 +244,11 @@
 
   &__list {
     @include list-unstyled();
+
+    & > li {
+      margin-block: space("x-small");
+      font-size: 0.875rem;
+    }
   }
 
   &__image {
@@ -259,6 +264,7 @@
 
     &--free {
       width: 21rem;
+      margin-block-start: space("large");
       text-align: center;
 
       & > img {

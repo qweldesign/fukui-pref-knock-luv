@@ -57,7 +57,7 @@ $thanksPage = "https://fukui-knock-luv.com/consultation/thanks.html";
 $requireCheck = 1;
 
 // 必須入力項目 (入力フォームで指定したname属性の値をカンマで区切って指定)
-$require = array('ニックネーム','ご相談者様の年齢','お子様(もしくはお孫様)の年齢','性別','居住地','Email','プライバシーポリシー');
+$require = array('ニックネーム','性別','年齢','居住地','Email','プライバシーポリシー');
 
 
 //
