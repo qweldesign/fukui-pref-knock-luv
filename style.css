@@ -729,11 +729,6 @@ button, input, select, textarea {
 .pageMain__lead h3 {
   font-size: 1.17rem;
 }
-.pageMain__headline {
-  color: var(--color--primary--active);
-  font-size: 1.33rem;
-  text-align: center;
-}
 .pageMain__imgHeading {
   margin-inline: auto;
 }
@@ -761,6 +756,16 @@ button, input, select, textarea {
 .pageMain__list > li {
   margin-block: var(--spacing--x-small);
   font-size: 0.875rem;
+}
+.pageMain__note {
+  padding: var(--spacing--small) var(--spacing--medium);
+  background-color: #eee;
+}
+.pageMain__note h4 {
+  margin-block: var(--spacing--small);
+  color: var(--color--primary--active);
+  font-size: 1.33rem;
+  text-align: center;
 }
 .pageMain__decrationText::before {
   content: "●";
