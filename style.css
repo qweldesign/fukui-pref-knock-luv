@@ -652,6 +652,14 @@ button, input, select, textarea {
   font-weight: 700;
   font-size: 1.17rem;
 }
+.pageMain__heading--withWrap {
+  margin-block: var(--spacing--medium);
+  padding: var(--spacing--x-small);
+  border: 1px solid var(--color--darkest);
+  background-color: var(--color--lightest);
+  text-align: center;
+  box-shadow: 0.25rem 0.25rem #fedf7b;
+}
 .pageMain__subHeading {
   margin: var(--spacing--medium) 0 var(--spacing--small);
   padding-inline-start: 0.375rem;
@@ -1596,11 +1604,20 @@ button, input, select, textarea {
  * Project - Chat
  */
 .chat {
-  list-style: none;
-  padding-inline-start: 0;
   border: 2px solid var(--color--darkest);
   border-radius: var(--spacing--medium);
   background-color: var(--color--secondary);
+}
+.chat__headline {
+  margin-inline-start: var(--spacing--large);
+  padding-inline-start: 0.375rem;
+  border-inline-start: 0.375rem solid var(--color--lightest);
+  color: var(--color--lightest);
+}
+.chat__list {
+  list-style: none;
+  padding-inline-start: 0;
+  font-size: 0.875rem;
 }
 .chat__item {
   position: relative;
@@ -1629,12 +1646,16 @@ button, input, select, textarea {
   position: relative;
   width: 15rem;
   margin: var(--spacing--medium) auto;
-  padding: 0 var(--spacing--small);
+  padding: var(--spacing--x-small) var(--spacing--small);
   border: 2px solid var(--color--darkest);
   background-color: var(--color--lightest);
 }
 .chat__balloon.chat__balloon--left {
   box-shadow: -0.5rem 0.5rem #fedf7b;
+}
+.chat__balloon.chat__balloon--left.chat__balloon--long {
+  width: 19.5rem;
+  transform: translateX(2.25rem);
 }
 .chat__balloon.chat__balloon--left::before {
   content: "";
@@ -1659,6 +1680,10 @@ button, input, select, textarea {
 .chat__balloon.chat__balloon--right {
   box-shadow: 0.5rem 0.5rem #ee8592;
 }
+.chat__balloon.chat__balloon--right.chat__balloon--semilong {
+  width: 18rem;
+  transform: translateX(-1.5rem);
+}
 .chat__balloon.chat__balloon--right::before {
   content: "";
   position: absolute;
@@ -1678,6 +1703,24 @@ button, input, select, textarea {
   margin-block-start: -0.8rem;
   border: 0.8rem solid transparent;
   border-inline-start: 1.6rem solid var(--color--darkest);
+}
+.chat__good {
+  display: block;
+  width: 4.5rem;
+  padding-block: var(--spacing--small);
+}
+.chat__good--left {
+  margin-left: 6rem;
+  margin-right: auto;
+}
+.chat__note {
+  margin-block-start: var(--spacing--large);
+  padding: var(--spacing--small) var(--spacing--medium);
+  border-block: 1px solid var(--color--darkest);
+  background-color: var(--color--lighter);
+}
+.chat__figure {
+  padding: var(--spacing--medium) var(--spacing--x-small);
 }
 
 /**
@@ -2172,7 +2215,13 @@ button, input, select, textarea {
   order: 1;
 }
 .textMedia__text h3:has(img) {
-  width: 13.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 4.5rem;
+}
+.textMedia__text h3:has(img) img {
+  width: auto;
+  height: 100%;
 }
 .textMedia__largeText {
   font-size: 1.5em;

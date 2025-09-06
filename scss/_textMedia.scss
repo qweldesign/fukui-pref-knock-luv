@@ -17,7 +17,13 @@
     order: 1;
 
     h3:has(img) {
-      width: 13.5rem;
+      width: fit-content;
+      height: 4.5rem;
+
+      img {
+        width: auto;
+        height: 100%;
+      }
     }
   }
 

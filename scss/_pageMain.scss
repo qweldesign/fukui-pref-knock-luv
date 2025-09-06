@@ -138,6 +138,15 @@
     margin: space("large") 0 space();
     font-weight: 700;
     font-size: 1.17rem;
+
+    &--withWrap {
+      margin-block: space("medium");
+      padding: space("x-small");
+      border: 1px solid theme-color("darkest");
+      background-color: theme-color("lightest");
+      text-align: center;
+      box-shadow: 0.25rem 0.25rem #fedf7b;;
+    }
   }
 
   &__subHeading {
